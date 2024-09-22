@@ -1,0 +1,172 @@
+@import url(https://fonts.bunny.net/css?family=lobster-two:400,700|dm-sans:400,500,700|mulish:400,700|jost:400);
+/*import vendors*/
+@import url(../../../../../assets/css/vendors/normalize.css);
+@import url(../../../../../assets/css/vendors/bootstrap.min.css);
+@import url(../../../../../assets/css/vendors/uicons-regular-rounded.css);
+@import url(../../../../../assets/css/plugins/swiper-bundle.min.css);
+@import url(../../../../../assets/css/plugins/magnific-popup.css);
+@import url(../../../../../assets/css/plugins/select2.min.css);
+@import url(../../../../../assets/css/plugins/slick.css);
+/* @import url(../../../../../../../../../../assets/css/plugins/jquery-ui.css); */
+@import url(../../../../../assets/css/plugins/perfect-scrollbar.css);
+@import url(../../../../../assets/css/plugins/animate.css);
+@import url(../../../../../assets/css/plugins/jquery.timepicker.min.css);
+@import url(../../../../../assets/css/plugins/glightbox.min.css);
+
+ul,
+li,
+a,
+img {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+img {
+  max-width: 100%;
+}
+
+img {
+  transition: all 0.3s ease-in-out;
+  transform: scale(1);
+}
+img:hover {
+  transform: scale(1.02);
+}
+.sidebar-border {
+  border: 1px solid #DBE2E5;
+  padding: 32px 47px;
+  box-shadow: 0px 10px 42px rgba(1, 9, 20, 0.06);
+  margin-bottom: 32px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #1C1D1D;
+}
+
+.head-sidebar {
+  margin-bottom: 28px;
+  border-bottom: 1px solid #DBE2E5;
+  padding-bottom: 10px;
+}
+
+.font-3xl-bold {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 42px;
+  color: #1C1D1D;
+  text-decoration: none;
+}
+
+.list-filter-checkbox li {
+  position: relative;
+  margin-bottom: 12px;
+}
+
+.font-xl {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 32px;
+  color: #1C1D1D;
+}
+
+
+.number-item {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 4px 5px;
+  font-size: 13px;
+  line-height: 16px;
+  border-radius: 7px;
+  font-weight: 500;
+  background: #EFF2F3;
+  color: #1C1D1D;
+  height: 24px;
+  bottom: 0px;
+  margin: auto;
+}
+
+h5 {
+  font-size: 22px !important;
+  line-height: 27px !important;
+}
+
+a {
+  text-decoration: none;
+  color: #1C1D1D;
+}
+a * {
+  color: #1C1D1D;
+}
+a:hover, a:hover * {
+  color: #E35946;
+}
+
+
+.list-galleries {
+  display: flex;
+  margin: 0px -1px;
+  flex-wrap: wrap;
+}
+.list-galleries li {
+  width: 33.33%;
+  padding: 1px;
+}
+.list-galleries li a img {
+  display: block;
+}
+
+.list-featured-posts li:last-child .cardFeaturePost {
+  margin-bottom: 0px;
+}
+
+
+.cardFeaturePost {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.cardFeaturePost .cardImage {
+  min-width: 113px;
+  margin-right: 15px;
+}
+.cardFeaturePost .cardInfo .lbl-tag-brand {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 16px;
+  color: #9F86D9;
+  display: block;
+  margin-bottom: 9px;
+}
+.cardFeaturePost .cardInfo .link-feature {
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #1C1D1D;
+}
+.cardFeaturePost .cardInfo .link-feature:hover {
+  color: #E35946;
+}
+
+.top-head-blog {
+  max-width: 946px;
+  margin: auto;
+}
+
+@media (max-width: 1199.98px) {
+
+  .sidebar-border {
+    padding: 22px;
+  }
+}

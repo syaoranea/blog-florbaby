@@ -1,0 +1,302 @@
+@import url(../../utils/utils.css);
+@import url(../../utils/responsivo.css);
+@import url(https://fonts.bunny.net/css?family=lobster-two:400,700|dm-sans:400,500,700|mulish:400,700|jost:400);
+/*import vendors*/
+@import url(../../../../assets/css/vendors/normalize.css);
+@import url(../../../../assets/css/vendors/bootstrap.min.css);
+@import url(../../../../assets/css/vendors/uicons-regular-rounded.css);
+@import url(../../../../assets/css/plugins/swiper-bundle.min.css);
+@import url(../../../../assets/css/plugins/magnific-popup.css);
+@import url(../../../../assets/css/plugins/select2.min.css);
+@import url(../../../../assets/css/plugins/slick.css);
+/* @import url(../../../../../../../../assets/css/plugins/jquery-ui.css); */
+@import url(../../../../assets/css/plugins/perfect-scrollbar.css);
+@import url(../../../../assets/css/plugins/animate.css);
+@import url(../../../../assets/css/plugins/jquery.timepicker.min.css);
+@import url(../../../../assets/css/plugins/glightbox.min.css);
+.address-footer {
+  padding-left: 30px;
+}
+
+.time-footer {
+
+  padding-left: 30px;
+}
+
+
+.footer {
+  background-color: #ffffff;
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: cover;
+  padding: 50px 0px 0px 0px;
+}
+.footer .menu-footer {
+  display: inline-block;
+}
+.footer .menu-footer li {
+  list-style: none;
+  margin-bottom: 12px;
+}
+.footer .menu-footer li a {
+  color: #1C1D1D;
+  font-size: 16px;
+  line-height: 30px;
+  font-family: "DM Sans", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  display: block;
+  padding: 0px 0px 0px 15px;
+  transition-duration: 0.2s;
+  background: url(../../../../assets/imgs/template/icons/arrow-menu.svg) no-repeat left center;
+}
+.footer .menu-footer li a:hover {
+  transition-duration: 0.2s;
+  padding-left: 17px;
+  text-decoration: underline;
+}
+.footer .menu-footer li a.facebook {
+  background: url(../../../../assets/imgs/template/icons/fb.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer .menu-footer li a.twitter {
+  background: url(../../../../assets/imgs/template/icons/tw.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer .menu-footer li a.instagram {
+  padding-left: 24px;
+}
+.footer .menu-footer li a.pinterest {
+  background: url(../../../../assets/imgs/template/icons/pin.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer .menu-footer li a.youtube {
+  background: url(../../../../assets/imgs/template/icons/youtube.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer .menu-footer li a.facebook:hover, .footer .menu-footer li a.twitter:hover, .footer .menu-footer li a.instagram:hover, .footer .menu-footer li a.pinterest:hover, .footer .menu-footer li a.youtube:hover {
+  padding-left: 26px;
+}
+.footer .desc-company {
+  margin-bottom: 7px;
+}
+.footer .phone-footer, .footer .email-footer {
+  margin-bottom: 7px;
+}
+.footer .phone-footer {
+  background: url(../../../../assets/imgs/template/icons/phone.svg) no-repeat left center;
+  padding-left: 30px;
+}
+.footer .email-footer {
+  background: url(../../../../assets/imgs/template/icons/email.svg) no-repeat left center;
+  padding-left: 30px;
+}
+.footer p.color-white {
+  color: rgba(255, 255, 255, 0.8352941176);
+}
+.footer.footer-white {
+  background-color: #ffffff;
+  border-top: 1px solid #EEEEEE;
+}
+.footer.footer-white .color-white {
+  color: #1C1D1D;
+}
+.footer.footer-white .menu-footer li a {
+  color: rgba(17, 17, 17, 0.7725490196);
+}
+.footer.footer-white .desc-company {
+  color: rgba(17, 17, 17, 0.7725490196) !important;
+}
+.footer.footer-white .btn.btn-line-bottom {
+  color: rgba(17, 17, 17, 0.7725490196);
+  border-bottom-color: #DDDDDD;
+}
+.footer.footer-white .btn.btn-line-bottom:after {
+  background-image: url(../../../../assets/imgs/template/icons/arrow-down-grey.svg);
+}
+.footer.footer-style-2 {
+  background-color: #9F86D9;
+}
+.footer.footer-style-2 .menu-footer li a {
+  color: #ffffff;
+  background-image: url(../../../../assets/imgs/template/icons/arrow-menu-white.svg);
+}
+.footer.footer-style-2 .menu-footer li a.facebook {
+  background: url(../../../../assets/imgs/template/icons/fb-w.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer.footer-style-2 .menu-footer li a.twitter {
+  background: url(../../../../assets/imgs/template/icons/tw-w.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer.footer-style-2 .menu-footer li a.instagram {
+  background: url(../../../../assets/imgs/template/icons/instagram-w.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer.footer-style-2 .menu-footer li a.pinterest {
+  background: url(../../../../assets/imgs/template/icons/pin-w.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer.footer-style-2 .menu-footer li a.youtube {
+  background: url(../../../../assets/imgs/template/icons/youtube-w.svg) no-repeat left center;
+  padding-left: 24px;
+}
+.footer.footer-style-2 .menu-footer li a.facebook:hover, .footer.footer-style-2 .menu-footer li a.twitter:hover, .footer.footer-style-2 .menu-footer li a.instagram:hover, .footer.footer-style-2 .menu-footer li a.pinterest:hover, .footer.footer-style-2 .menu-footer li a.youtube:hover {
+  padding-left: 26px;
+}
+.footer.footer-style-2 .phone-footer {
+  background: url(../../../../assets/imgs/template/icons/phone-w.svg) no-repeat left center;
+}
+.footer.footer-style-2 .email-footer {
+  background: url(../../../../assets/imgs/template/icons/email-w.svg) no-repeat left center;
+}
+.footer.footer-style-2 a {
+  color: #ffffff;
+}
+.footer.footer-style-4 .footer-1 .container {
+  max-width: 1170px;
+}
+.footer.footer-style-4 .footer-1 .box-form-subscribe {
+  max-width: 310px;
+}
+.footer.footer-style-4 .footer-2 .box-container-footer {
+  max-width: 1170px;
+  margin: auto;
+}
+.footer.footer-style-5 .box-socials-footer a:last-child {
+  margin-right: 0px;
+}
+.footer.footer-style-5 .footer-bottom {
+  padding: 61px 0px 30px 0px;
+}
+.footer.footer-style-5 .box-container-footer {
+  max-width: 1170px;
+  margin: auto;
+}
+
+.box-top-menu-footer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.box-socials-footer a {
+  display: inline-block;
+  margin-right: 15px;
+}
+.box-socials-footer a svg {
+  fill: #9F86D9;
+  height: 28px;
+}
+
+.logo-footer {
+  margin-bottom: 12px;
+}
+
+.footer-2 {
+  position: relative;
+}
+
+.footerBorder {
+  position: relative;
+}
+.footerBorder::before {
+  content: "";
+  height: 100%;
+  width: 1px;
+  background-color: rgba(255, 255, 255, 0.231372549);
+  position: absolute;
+  left: -10px;
+  top: 0px;
+}
+
+.box-payments img {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+  transition-duration: 0.2s;
+}
+.box-payments img:last-child {
+  margin-right: 0px;
+}
+.box-payments img:hover {
+  transform: translateY(-3px);
+  transition-duration: 0.2s;
+}
+
+.footer-bottom {
+  padding: 24px 0px 4px 0px;
+  border-top: 1px solid #DBE2E5;
+}
+.footer-bottom a {
+  color: #9F86D9;
+}
+.footer-bottom a:hover {
+  color: #E35946;
+}
+
+.menu-bottom {
+  display: inline-block;
+  padding-left: 0px;
+}
+.menu-bottom li {
+  display: inline-block;
+  color: #646667;
+  padding: 0px 8px;
+}
+.menu-bottom li a {
+  color: #646667;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+}
+.menu-bottom li a:hover {
+  color: #1C1D1D;
+}
+.menu-bottom li:first-child {
+  padding-left: 0px;
+}
+
+.bg-download {
+  background-color: #A0DDF8;
+
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  padding: 123px 0px;
+  position: relative;
+}
+.bg-download .container-sub {
+  position: relative;
+  z-index: 2;
+}
+.bg-download::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: auto 100%;
+  z-index: 1;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+
+.box-footer-top {
+  padding: 30px 0px 10px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 60px;
+}
+
+.box-list-item-checkout, .box-footer-checkout {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #DBE2E5;
+  margin-bottom: 25px;
+}
+

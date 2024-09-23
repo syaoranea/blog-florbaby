@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blogflorbaby-dev-672ae-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335331047:role/amplify-blogflorbaby-dev-672ae-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335331047:role/amplify-blogflorbaby-dev-672ae-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-blogflorbaby-dev-672ae-deployment",
+      "UnauthRoleName": "amplify-blogflorbaby-dev-672ae-unauthRole",
+      "StackName": "amplify-blogflorbaby-dev-672ae",
+      "StackId": "arn:aws:cloudformation:us-east-1:730335331047:stack/amplify-blogflorbaby-dev-672ae/4e825cf0-7922-11ef-afee-126bceb3bdd5",
+      "AmplifyAppId": "d2s4asars4jldu"
+    },
+    "categories": {
+      "api": {
+        "blogflorbaby": {}
+      }
+    }
+  }
+}

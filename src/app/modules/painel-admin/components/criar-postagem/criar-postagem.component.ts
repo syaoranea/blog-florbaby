@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-/* import { generateClient } from 'aws-amplify/api';
-import { createBlog, createPost } from '../../../../../graphql/mutations'; */
+import { generateClient } from 'aws-amplify/api';
+import { APIService, CreatePostagemInput } from '../../../../API.service';
 
 
 @Component({
-
   selector: 'app-criar-postagem',
   standalone: true,
   imports: [ReactiveFormsModule],
@@ -14,7 +13,9 @@ import { createBlog, createPost } from '../../../../../graphql/mutations'; */
 })
 export class CriarPostagemComponent {
 
-  constructor() {
+  constructor(
+    private api: APIService
+  ) {
 
   }
 
@@ -26,20 +27,23 @@ export class CriarPostagemComponent {
   });
 
   async onSubmit() {
+
     /* const client = generateClient();
-    console.log(this.postForm.value);
+    console.log(this.postForm.value); */
 
     if (this.postForm.valid) {
       const postDetails = {
         title: this.postForm.value.title,
-        description: this.postForm.value.description,
-        author: this.postForm.value.author,
-        category: this.postForm.value.categoria,
-        createdAt: this.today
+        categoria: this.postForm.value.categoria,
+        descricao: this.postForm.value.description,
+        imagem: 'aaaaaa',
+        autor: this.postForm.value.author,
       };
-
+      this.api.CreatePostagem(postDetails as CreatePostagemInput);
+    }
+ /*
       const result = await client.graphql({
-        query: createPost,
+        query: createPostagem,
         variables: {
           input: postDetails,
         },
@@ -47,6 +51,7 @@ export class CriarPostagemComponent {
 
       console.log(result);
     } */
+
    console.log('s')
   }
 }

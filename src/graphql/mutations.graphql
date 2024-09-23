@@ -1,0 +1,169 @@
+# this is an auto generated file. This will be overwritten
+
+export mutation CreatePostagem(
+  $input: CreatePostagemInput!
+  $condition: ModelPostagemConditionInput
+) {
+  createPostagem(input: $input, condition: $condition) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdatePostagem(
+  $input: UpdatePostagemInput!
+  $condition: ModelPostagemConditionInput
+) {
+  updatePostagem(input: $input, condition: $condition) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeletePostagem(
+  $input: DeletePostagemInput!
+  $condition: ModelPostagemConditionInput
+) {
+  deletePostagem(input: $input, condition: $condition) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateCategoria(
+  $input: CreateCategoriaInput!
+  $condition: ModelCategoriaConditionInput
+) {
+  createCategoria(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateCategoria(
+  $input: UpdateCategoriaInput!
+  $condition: ModelCategoriaConditionInput
+) {
+  updateCategoria(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteCategoria(
+  $input: DeleteCategoriaInput!
+  $condition: ModelCategoriaConditionInput
+) {
+  deleteCategoria(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateTags(
+  $input: CreateTagsInput!
+  $condition: ModelTagsConditionInput
+) {
+  createTags(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateTags(
+  $input: UpdateTagsInput!
+  $condition: ModelTagsConditionInput
+) {
+  updateTags(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteTags(
+  $input: DeleteTagsInput!
+  $condition: ModelTagsConditionInput
+) {
+  deleteTags(input: $input, condition: $condition) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation CreateGaleria(
+  $input: CreateGaleriaInput!
+  $condition: ModelGaleriaConditionInput
+) {
+  createGaleria(input: $input, condition: $condition) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateGaleria(
+  $input: UpdateGaleriaInput!
+  $condition: ModelGaleriaConditionInput
+) {
+  updateGaleria(input: $input, condition: $condition) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteGaleria(
+  $input: DeleteGaleriaInput!
+  $condition: ModelGaleriaConditionInput
+) {
+  deleteGaleria(input: $input, condition: $condition) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}

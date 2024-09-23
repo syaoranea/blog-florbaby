@@ -1,0 +1,117 @@
+# this is an auto generated file. This will be overwritten
+
+query GetPostagem($id: ID!) {
+  getPostagem(id: $id) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListPostagems(
+  $filter: ModelPostagemFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listPostagems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      categoria
+      descricao
+      imagem
+      autor
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetCategoria($id: ID!) {
+  getCategoria(id: $id) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListCategorias(
+  $filter: ModelCategoriaFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCategorias(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nome
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetTags($id: ID!) {
+  getTags(id: $id) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListTags($filter: ModelTagsFilterInput, $limit: Int, $nextToken: String) {
+  listTags(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      nome
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetGaleria($id: ID!) {
+  getGaleria(id: $id) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListGalerias(
+  $filter: ModelGaleriaFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listGalerias(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      imagem
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}

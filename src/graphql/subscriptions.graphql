@@ -1,0 +1,133 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreatePostagem($filter: ModelSubscriptionPostagemFilterInput) {
+  onCreatePostagem(filter: $filter) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdatePostagem($filter: ModelSubscriptionPostagemFilterInput) {
+  onUpdatePostagem(filter: $filter) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeletePostagem($filter: ModelSubscriptionPostagemFilterInput) {
+  onDeletePostagem(filter: $filter) {
+    id
+    title
+    categoria
+    descricao
+    imagem
+    autor
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateCategoria($filter: ModelSubscriptionCategoriaFilterInput) {
+  onCreateCategoria(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateCategoria($filter: ModelSubscriptionCategoriaFilterInput) {
+  onUpdateCategoria(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteCategoria($filter: ModelSubscriptionCategoriaFilterInput) {
+  onDeleteCategoria(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateTags($filter: ModelSubscriptionTagsFilterInput) {
+  onCreateTags(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateTags($filter: ModelSubscriptionTagsFilterInput) {
+  onUpdateTags(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteTags($filter: ModelSubscriptionTagsFilterInput) {
+  onDeleteTags(filter: $filter) {
+    id
+    nome
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnCreateGaleria($filter: ModelSubscriptionGaleriaFilterInput) {
+  onCreateGaleria(filter: $filter) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateGaleria($filter: ModelSubscriptionGaleriaFilterInput) {
+  onUpdateGaleria(filter: $filter) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteGaleria($filter: ModelSubscriptionGaleriaFilterInput) {
+  onDeleteGaleria(filter: $filter) {
+    id
+    imagem
+    createdAt
+    updatedAt
+    __typename
+  }
+}

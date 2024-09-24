@@ -1,0 +1,24 @@
+<div class="col-md-9">
+  <h1>Categorias</h1>
+  <div class="tab-content account dashboard-content pl-50">
+      <div class="card">
+        <div class="card-header">
+          <h3 class="mb-0"></h3>
+        </div>
+        <div class="card-body">
+          <div class="conta">
+          <form [formGroup]="categoriaForm" (ngSubmit)="onSubmit()" class="post-form">
+            <div class="form-group">
+              <label for="title">Nome</label>
+              <input type="text" id="title" class="form-control" formControlName="nome">
+            </div>
+
+            <button type="submit" class="btn btn-primary" [disabled]="categoriaForm.invalid">Criar Categoria</button>
+          </form>
+          </div>
+        </div>
+
+    </div>
+
+  </div>
+</div>

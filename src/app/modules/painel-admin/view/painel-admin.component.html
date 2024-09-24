@@ -1,7 +1,7 @@
 
 <div class="container2">
   <div class="row">
-    <!-- <amplify-authenticator> -->
+    <amplify-authenticator>
       <main class="main">
         <div class="container">
           <div class="top-head-blog">
@@ -25,7 +25,10 @@
                     <ul class="nav flex-column" role="tablist">
                       <li class="nav-item"><a class="nav-link active" (click)="pageChange('Dashboard')"><i class="fi-rs-settings-sliders mr-10"></i>Dashboard</a></li>
                       <li class="nav-item"><a class="nav-link" ><i class="fi-rs-shopping-bag mr-10"></i>Postagens</a></li>
-                      <li class="nav-item"><button class="nav-link" (click)="pageChange('Criar Postagem')" ><i class="fi-rs-shopping-cart-check mr-10"></i>Criar Postagem</button></li>
+                      <li class="nav-item"><button class="nav-link" (click)="pageChange('Criar-Postagem')" ><i class="fi-rs-shopping-cart-check mr-10"></i>Criar Postagem</button></li>
+                      <li class="nav-item"><button class="nav-link" (click)="pageChange('Criar-Categoria')" ><i class="fi-rs-shopping-cart-check mr-10"></i>Criar Categoria</button></li>
+                      <li class="nav-item"><button class="nav-link" (click)="pageChange('Criar Tag')" ><i class="fi-rs-shopping-cart-check mr-10"></i>Criar Tag</button></li>
+                      <li class="nav-item"><button class="nav-link" (click)="pageChange('Criar Galeria')" ><i class="fi-rs-shopping-cart-check mr-10"></i>Criar Galeria</button></li>
                       <li class="nav-item"><a class="nav-link" ><i class="fi-rs-marker mr-10"></i>Tagueamento</a></li>
                       <li class="nav-item"><a class="nav-link" ><i class="fi-rs-user mr-10"></i>Detalhes da Conta</a></li>
                       <li class="nav-item"><a class="nav-link" (click)="sigout()" ><i class="fi-rs-sign-out mr-10"></i>Logout</a></li>
@@ -48,12 +51,18 @@
                   </div>
                 </div>
 
-                <app-criar-postagem *ngIf="pageActive === 'Criar Postagem'"></app-criar-postagem>
+                <app-criar-postagem *ngIf="pageActive === 'Criar-Postagem'"></app-criar-postagem>
+
+                <app-criar-categorias *ngIf="pageActive === 'Criar-Categoria'"></app-criar-categorias>
+
+                <app-criar-tag *ngIf="pageActive === 'Criar Tag'"></app-criar-tag>
+
+                <app-criar-galeria *ngIf="pageActive === 'Criar Galeria'"></app-criar-galeria>
               </div>
             </div>
           </div>
         </div>
       </main>
-    <!-- </amplify-authenticator> -->
+    </amplify-authenticator>
   </div>
 </div>

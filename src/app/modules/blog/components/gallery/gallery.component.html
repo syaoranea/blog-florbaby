@@ -1,16 +1,8 @@
 <div class="sidebar-border">
   <h5 class="font-3xl-bold head-sidebar">Gallery</h5>
   <div class="content-sidebar">
-    <ul class="list-galleries">
-      <li><a href="#"><img src="assets/imgs/page/blog/gal.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal2.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal3.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal4.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal5.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal6.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal7.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal8.png" alt="kidify"></a></li>
-      <li><a href="#"><img src="assets/imgs/page/blog/gal9.png" alt="kidify"></a></li>
+    <ul class="list-galleries" *ngFor="let item of data">
+      <li><a href="#"><img src="{{item.imagem}}" alt="florbaby"></a></li>
     </ul>
   </div>
 </div>

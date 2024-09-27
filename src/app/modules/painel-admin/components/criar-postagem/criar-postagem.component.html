@@ -1,5 +1,9 @@
 <div class="col-md-9">
+  <h1>Categorias</h1>
   <div class="tab-content account dashboard-content pl-50">
+    <div class="botao">
+      <a class="btn btn-primary" (click)="goToPage()">Listar Postagem</a>
+    </div>
       <div class="card">
         <div class="card-header">
           <h3 class="mb-0"></h3>
@@ -20,6 +24,11 @@
             <div class="form-group">
               <label for="date">Categoria</label>
               <input type="text" id="categoria" class="form-control" formControlName="categoria">
+            </div>
+
+            <div class="form-group">
+              <label for="date">Categoria</label>
+              <input type="text" id="imagem" class="form-control" formControlName="imagem">
             </div>
 
             <div class="form-group">

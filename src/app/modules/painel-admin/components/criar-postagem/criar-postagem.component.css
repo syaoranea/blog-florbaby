@@ -36,3 +36,8 @@ textarea {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.botao {
+  display: flex;
+  justify-content: end;
+}

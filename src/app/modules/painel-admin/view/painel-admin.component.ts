@@ -13,6 +13,10 @@ import { AuthService } from '../../../shared/services/auth.service';
 import { CriarCategoriasComponent } from "../components/criar-categorias/criar-categorias.component";
 import { CriarGaleriaComponent } from "../components/criar-galeria/criar-galeria.component";
 import { CriarTagComponent } from "../components/criar-tag/criar-tag.component";
+import { ListarPostagemComponent } from "../components/listar-postagem/listar-postagem.component";
+import { ListarCategoriaComponent } from "../components/listar-categoria/listar-categoria.component";
+import { ListarTagComponent } from "../components/listar-tag/listar-tag.component";
+import { ListarGaleriaComponent } from "../components/listar-galeria/listar-galeria.component";
 
 
 
@@ -26,7 +30,11 @@ import { CriarTagComponent } from "../components/criar-tag/criar-tag.component";
     CommonModule,
     CriarCategoriasComponent,
     CriarGaleriaComponent,
-    CriarTagComponent
+    CriarTagComponent,
+    ListarPostagemComponent,
+    ListarCategoriaComponent,
+    ListarTagComponent,
+    ListarGaleriaComponent
 ],
   templateUrl: './painel-admin.component.html',
   styleUrl: './painel-admin.component.css'

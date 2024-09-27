@@ -51,13 +51,22 @@
                   </div>
                 </div>
 
-                <app-criar-postagem *ngIf="pageActive === 'Criar-Postagem'"></app-criar-postagem>
+                <app-criar-postagem *ngIf="pageActive === 'Criar-Postagem'" (page)="pageChange('Listar-Postagem')"></app-criar-postagem>
 
-                <app-criar-categorias *ngIf="pageActive === 'Criar-Categoria'"></app-criar-categorias>
+                <app-criar-categorias *ngIf="pageActive === 'Criar-Categoria'" (page)="pageChange('Listar-Categoria')"></app-criar-categorias>
 
-                <app-criar-tag *ngIf="pageActive === 'Criar Tag'"></app-criar-tag>
+                <app-criar-tag *ngIf="pageActive === 'Criar Tag'"(page)="pageChange('Listar-tag')"></app-criar-tag>
 
-                <app-criar-galeria *ngIf="pageActive === 'Criar Galeria'"></app-criar-galeria>
+                <app-criar-galeria *ngIf="pageActive === 'Criar Galeria'"(page)="pageChange('Listar-galeria')"></app-criar-galeria>
+
+                <app-listar-postagem *ngIf="pageActive === 'Listar-Postagem'"></app-listar-postagem>
+
+                <app-listar-categoria *ngIf="pageActive === 'Listar-Categoria'"></app-listar-categoria>
+
+                <app-listar-tag *ngIf="pageActive === 'Listar-tag'"></app-listar-tag>
+
+                <app-listar-galeria *ngIf="pageActive === 'Listar-galeria'"></app-listar-galeria>
+
               </div>
             </div>
           </div>

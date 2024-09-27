@@ -1,0 +1,53 @@
+<app-loading></app-loading>
+<div class="product-status mg-b-30">
+  <div class="container-fluid" *ngIf="!loading && page === 'table'">
+      <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+              <div class="product-status-wrap">
+                  <h4>Postagem List</h4>
+                  <div class="add-product">
+                      <a href="product-edit.html">Criar Postagem</a>
+                  </div>
+                  <table class="tb" >
+                      <tr class="tb-title">
+                          <th>Image</th>
+                          <th>Titulo</th>
+                          <th>Status</th>
+                          <th>Autor</th>
+                          <th>Data Criação</th>
+                          <th>Categoria</th>
+                          <th>Opções</th>
+                      </tr>
+                      <tr *ngFor="let item of data">
+                          <td><img src="img/new-product/5-small.jpg" alt="" /></td>
+                          <td>{{item.title}}</td>
+                          <td>
+                              <button class="pd-setting">Active</button>
+                          </td>
+                          <td>{{item.autor}}</td>
+                          <td>{{item.createdAt}}</td>
+                          <td>{{item.categoria}}</td>
+                          <td>
+                              <button data-toggle="tooltip" title="Edit" class="pd-setting-ed" (click)="onEdit(item.id)">Edit</button>
+                              <button data-toggle="tooltip" title="Trash" class="pd-setting-ed" (click)="onDelete(item.id)">Excluir</button>
+                          </td>
+                      </tr>
+
+                  </table>
+                  <div class="custom-pagination">
+                    <ul class="pagination">
+                      <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                      <li class="page-item"><a class="page-link" href="#">1</a></li>
+                      <li class="page-item"><a class="page-link" href="#">2</a></li>
+                      <li class="page-item"><a class="page-link" href="#">3</a></li>
+                      <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                  </div>
+
+
+              </div>
+          </div>
+      </div>
+  </div>
+  <app-criar-postagem *ngIf="!loading && page === 'edit'" [dataEdit]="dataEdit" (page)="page ='table'"></app-criar-postagem>
+</div>

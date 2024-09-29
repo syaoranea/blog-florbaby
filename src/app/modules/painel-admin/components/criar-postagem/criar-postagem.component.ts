@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { generateClient } from 'aws-amplify/api';
-import { APIService, CreatePostagemInput, UpdatePostagemInput } from '../../../../API.service';
+import { APIService, CreatePostagemInput, UpdatePostagemInput } from 'src/app/API.service';
 
 
 @Component({

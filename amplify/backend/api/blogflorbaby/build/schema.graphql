@@ -1,0 +1,446 @@
+type Postagem {
+  id: ID!
+  title: String!
+  categoria: String!
+  descricao: String!
+  imagem: String!
+  autor: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type categoria {
+  id: ID!
+  nome: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Tags {
+  id: ID!
+  nome: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Galeria {
+  id: ID!
+  imagem: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelPostagemConnection {
+  items: [Postagem]!
+  nextToken: String
+}
+
+input ModelPostagemFilterInput {
+  id: ModelIDInput
+  title: ModelStringInput
+  categoria: ModelStringInput
+  descricao: ModelStringInput
+  imagem: ModelStringInput
+  autor: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelPostagemFilterInput]
+  or: [ModelPostagemFilterInput]
+  not: ModelPostagemFilterInput
+}
+
+type Query {
+  getPostagem(id: ID!): Postagem
+  listPostagems(filter: ModelPostagemFilterInput, limit: Int, nextToken: String): ModelPostagemConnection
+  getCategoria(id: ID!): categoria
+  listCategorias(filter: ModelCategoriaFilterInput, limit: Int, nextToken: String): ModelCategoriaConnection
+  getTags(id: ID!): Tags
+  listTags(filter: ModelTagsFilterInput, limit: Int, nextToken: String): ModelTagsConnection
+  getGaleria(id: ID!): Galeria
+  listGalerias(filter: ModelGaleriaFilterInput, limit: Int, nextToken: String): ModelGaleriaConnection
+}
+
+input ModelPostagemConditionInput {
+  title: ModelStringInput
+  categoria: ModelStringInput
+  descricao: ModelStringInput
+  imagem: ModelStringInput
+  autor: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelPostagemConditionInput]
+  or: [ModelPostagemConditionInput]
+  not: ModelPostagemConditionInput
+}
+
+input CreatePostagemInput {
+  id: ID
+  title: String!
+  categoria: String!
+  descricao: String!
+  imagem: String!
+  autor: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdatePostagemInput {
+  id: ID!
+  title: String
+  categoria: String
+  descricao: String
+  imagem: String
+  autor: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeletePostagemInput {
+  id: ID!
+}
+
+type Mutation {
+  createPostagem(input: CreatePostagemInput!, condition: ModelPostagemConditionInput): Postagem
+  updatePostagem(input: UpdatePostagemInput!, condition: ModelPostagemConditionInput): Postagem
+  deletePostagem(input: DeletePostagemInput!, condition: ModelPostagemConditionInput): Postagem
+  createCategoria(input: CreateCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
+  updateCategoria(input: UpdateCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
+  deleteCategoria(input: DeleteCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
+  createTags(input: CreateTagsInput!, condition: ModelTagsConditionInput): Tags
+  updateTags(input: UpdateTagsInput!, condition: ModelTagsConditionInput): Tags
+  deleteTags(input: DeleteTagsInput!, condition: ModelTagsConditionInput): Tags
+  createGaleria(input: CreateGaleriaInput!, condition: ModelGaleriaConditionInput): Galeria
+  updateGaleria(input: UpdateGaleriaInput!, condition: ModelGaleriaConditionInput): Galeria
+  deleteGaleria(input: DeleteGaleriaInput!, condition: ModelGaleriaConditionInput): Galeria
+}
+
+input ModelSubscriptionPostagemFilterInput {
+  id: ModelSubscriptionIDInput
+  title: ModelSubscriptionStringInput
+  categoria: ModelSubscriptionStringInput
+  descricao: ModelSubscriptionStringInput
+  imagem: ModelSubscriptionStringInput
+  autor: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionPostagemFilterInput]
+  or: [ModelSubscriptionPostagemFilterInput]
+}
+
+type Subscription {
+  onCreatePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["createPostagem"])
+  onUpdatePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["updatePostagem"])
+  onDeletePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["deletePostagem"])
+  onCreateCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["createCategoria"])
+  onUpdateCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["updateCategoria"])
+  onDeleteCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["deleteCategoria"])
+  onCreateTags(filter: ModelSubscriptionTagsFilterInput): Tags @aws_subscribe(mutations: ["createTags"])
+  onUpdateTags(filter: ModelSubscriptionTagsFilterInput): Tags @aws_subscribe(mutations: ["updateTags"])
+  onDeleteTags(filter: ModelSubscriptionTagsFilterInput): Tags @aws_subscribe(mutations: ["deleteTags"])
+  onCreateGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["createGaleria"])
+  onUpdateGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["updateGaleria"])
+  onDeleteGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["deleteGaleria"])
+}
+
+type ModelCategoriaConnection {
+  items: [categoria]!
+  nextToken: String
+}
+
+input ModelCategoriaFilterInput {
+  id: ModelIDInput
+  nome: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCategoriaFilterInput]
+  or: [ModelCategoriaFilterInput]
+  not: ModelCategoriaFilterInput
+}
+
+input ModelCategoriaConditionInput {
+  nome: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCategoriaConditionInput]
+  or: [ModelCategoriaConditionInput]
+  not: ModelCategoriaConditionInput
+}
+
+input CreateCategoriaInput {
+  id: ID
+  nome: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateCategoriaInput {
+  id: ID!
+  nome: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteCategoriaInput {
+  id: ID!
+}
+
+input ModelSubscriptionCategoriaFilterInput {
+  id: ModelSubscriptionIDInput
+  nome: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCategoriaFilterInput]
+  or: [ModelSubscriptionCategoriaFilterInput]
+}
+
+type ModelTagsConnection {
+  items: [Tags]!
+  nextToken: String
+}
+
+input ModelTagsFilterInput {
+  id: ModelIDInput
+  nome: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelTagsFilterInput]
+  or: [ModelTagsFilterInput]
+  not: ModelTagsFilterInput
+}
+
+input ModelTagsConditionInput {
+  nome: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelTagsConditionInput]
+  or: [ModelTagsConditionInput]
+  not: ModelTagsConditionInput
+}
+
+input CreateTagsInput {
+  id: ID
+  nome: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateTagsInput {
+  id: ID!
+  nome: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteTagsInput {
+  id: ID!
+}
+
+input ModelSubscriptionTagsFilterInput {
+  id: ModelSubscriptionIDInput
+  nome: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionTagsFilterInput]
+  or: [ModelSubscriptionTagsFilterInput]
+}
+
+type ModelGaleriaConnection {
+  items: [Galeria]!
+  nextToken: String
+}
+
+input ModelGaleriaFilterInput {
+  id: ModelIDInput
+  imagem: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelGaleriaFilterInput]
+  or: [ModelGaleriaFilterInput]
+  not: ModelGaleriaFilterInput
+}
+
+input ModelGaleriaConditionInput {
+  imagem: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelGaleriaConditionInput]
+  or: [ModelGaleriaConditionInput]
+  not: ModelGaleriaConditionInput
+}
+
+input CreateGaleriaInput {
+  id: ID
+  imagem: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateGaleriaInput {
+  id: ID!
+  imagem: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteGaleriaInput {
+  id: ID!
+}
+
+input ModelSubscriptionGaleriaFilterInput {
+  id: ModelSubscriptionIDInput
+  imagem: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionGaleriaFilterInput]
+  or: [ModelSubscriptionGaleriaFilterInput]
+}

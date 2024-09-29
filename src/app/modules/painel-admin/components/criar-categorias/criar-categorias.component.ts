@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { APIService, CreateCategoriaInput, UpdateCategoriaInput } from '../../../../API.service';
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { APIService, CreateCategoriaInput, UpdateCategoriaInput } from 'src/app/API.service';
 
 @Component({
   selector: 'app-criar-categorias',

@@ -1,10 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { APIService, DeletePostagemInput, ListPostagemsQuery, Postagem } from '../../../../API.service';
+
 import { CommonModule } from '@angular/common';
 import { error } from 'console';
 import { CriarPostagemComponent } from "../criar-postagem/criar-postagem.component";
 import { LoadingComponent } from "../../../../shared/components/loading/loading.component";
 import { LoadingService } from '../../../../shared/services/loading.service';
+import { APIService, DeletePostagemInput } from 'src/app/API.service';
 
 @Component({
   selector: 'app-listar-postagem',

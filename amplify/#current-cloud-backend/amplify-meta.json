@@ -1,0 +1,83 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blogflorbaby-dev-672ae-authRole",
+      "UnauthRoleArn": "arn:aws:iam::730335331047:role/amplify-blogflorbaby-dev-672ae-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::730335331047:role/amplify-blogflorbaby-dev-672ae-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-blogflorbaby-dev-672ae-deployment",
+      "UnauthRoleName": "amplify-blogflorbaby-dev-672ae-unauthRole",
+      "StackName": "amplify-blogflorbaby-dev-672ae",
+      "StackId": "arn:aws:cloudformation:us-east-1:730335331047:stack/amplify-blogflorbaby-dev-672ae/4e825cf0-7922-11ef-afee-126bceb3bdd5",
+      "AmplifyAppId": "d2s4asars4jldu"
+    }
+  },
+  "api": {
+    "blogflorbaby": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": []
+        },
+        "GraphQLAPIIdOutput": "kaon3pifdzb5lgqnswpc4ptrei",
+        "GraphQLAPIEndpointOutput": "https://4lihoj4fmvd5nm3bn6xpxa3lye.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-yyftoqspynfczd6na3koh2dmeq"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apiblogflorbaby"
+      },
+      "lastPushTimeStamp": "2024-09-23T23:45:43.516Z",
+      "lastPushDirHash": "yZGE+2FOBC9Am08UkYU+LKxSfvg="
+    }
+  },
+  "auth": {
+    "blogflorbaby62da28fb": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/auth/blogflorbaby62da28fb-cloudformation-template.json",
+        "logicalId": "authblogflorbaby62da28fb"
+      },
+      "lastPushTimeStamp": "2024-09-23T23:45:48.764Z",
+      "output": {
+        "UserPoolId": "us-east-1_l4kmhh2hb",
+        "AppClientIDWeb": "5jmgnejbklb36ob1n2j585mlpc",
+        "AppClientID": "3vfai4hg5ovbiqj937qsk7iu8c",
+        "IdentityPoolId": "us-east-1:c487e424-c520-4a1c-904f-9d18703d3629",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:730335331047:userpool/us-east-1_l4kmhh2hb",
+        "IdentityPoolName": "blogflorbaby62da28fb_identitypool_62da28fb__dev",
+        "UserPoolName": "blogflorbaby62da28fb_userpool_62da28fb"
+      },
+      "lastPushDirHash": "RWjkdPawwVlc+EF+KhvPoHVNuhY="
+    }
+  }
+}

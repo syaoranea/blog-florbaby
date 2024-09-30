@@ -35,8 +35,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiblogflorbaby"
       },
-      "lastPushTimeStamp": "2024-09-23T23:45:43.516Z",
-      "lastPushDirHash": "yZGE+2FOBC9Am08UkYU+LKxSfvg="
+      "lastPushTimeStamp": "2024-09-30T01:53:36.971Z",
+      "lastPushDirHash": "qXqrow+5+EeYiFMITZRwZGBNh6E="
     }
   },
   "auth": {
@@ -67,7 +67,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/auth/blogflorbaby62da28fb-cloudformation-template.json",
         "logicalId": "authblogflorbaby62da28fb"
       },
-      "lastPushTimeStamp": "2024-09-23T23:45:48.764Z",
+      "lastPushTimeStamp": "2024-09-30T01:53:35.781Z",
       "output": {
         "UserPoolId": "us-east-1_l4kmhh2hb",
         "AppClientIDWeb": "5jmgnejbklb36ob1n2j585mlpc",

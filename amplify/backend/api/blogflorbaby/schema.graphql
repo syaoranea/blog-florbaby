@@ -9,6 +9,7 @@ type Postagem @model {
   descricao: String!
   imagem: String!
   autor: String!
+  
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

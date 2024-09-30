@@ -348,7 +348,8 @@
 
                     <div class="mb-3">
                       <label for="date-field" class="form-label">Descrição</label>
-                      <input type="text" id="date-field" class="form-control" mwlFlatpickr formControlName="description" [ngClass]="{ 'is-invalid': submitted && form['description'].errors }">
+                      <textarea class="form-control" aria-label="With textarea" mwlFlatpickr formControlName="description" rows="8"></textarea>
+                      <!-- <input type="text-area" id="date-field" class="form-control" mwlFlatpickr formControlName="description" [ngClass]="{ 'is-invalid': submitted && form['description'].errors }"> -->
                       <div class="invalid-feedback">Please select a description.</div>
                   </div>
                 </div>

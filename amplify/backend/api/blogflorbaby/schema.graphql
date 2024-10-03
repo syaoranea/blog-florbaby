@@ -9,11 +9,21 @@ type Postagem @model {
   descricao: String!
   imagem: String!
   autor: String!
-  
+  tag: String!
+  subtitulo: String!
+  tempodeleitura: String!
+  views: String!
+  blog: Int!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
 
+type Blog @model {
+  id: ID!
+  descricao: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
 
 type categoria @model {
   id: ID!

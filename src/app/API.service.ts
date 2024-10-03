@@ -35,6 +35,11 @@ export type CreatePostagemInput = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -45,6 +50,11 @@ export type ModelPostagemConditionInput = {
   descricao?: ModelStringInput | null;
   imagem?: ModelStringInput | null;
   autor?: ModelStringInput | null;
+  tag?: ModelStringInput | null;
+  subtitulo?: ModelStringInput | null;
+  views?: ModelStringInput | null;
+  tempodeleitura?: ModelStringInput | null;
+  blog?: ModelNumberInput | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelPostagemConditionInput | null> | null;
@@ -67,6 +77,16 @@ export type ModelStringInput = {
   attributeType?: ModelAttributeTypes | null;
   size?: ModelSizeInput | null;
 };
+
+export type  ModelNumberInput ={
+  eq: GLfloat  | null;
+  ne: GLfloat | null;
+  le: GLfloat | null;
+  lt: GLfloat | null;
+  ge: GLfloat | null;
+  gt: GLfloat | null;
+  between: [GLfloat] | null;
+}
 
 export enum ModelAttributeTypes {
   binary = "binary",
@@ -94,11 +114,16 @@ export type ModelSizeInput = {
 export type Postagem = {
   __typename: "Postagem";
   id: string;
-  title: string;
-  categoria: string;
-  descricao: string;
-  imagem: string;
-  autor: string;
+  title: string | null;
+  categoria: string | null;
+  descricao: string | null;
+  imagem: string | null;
+  autor: string | null;
+  tag: string | null;
+  subtitulo: string | null;
+  views: string | null;
+  tempodeleitura: string | null;
+  blog: Number | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -110,6 +135,11 @@ export type UpdatePostagemInput = {
   descricao?: string | null;
   imagem?: string | null;
   autor?: string | null;
+  tag?: string | null;
+  subtitulo?: string | null;
+  views?: string | null;
+  tempodeleitura?: string | null;
+  blog?: Number | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -230,6 +260,11 @@ export type ModelPostagemFilterInput = {
   descricao?: ModelStringInput | null;
   imagem?: ModelStringInput | null;
   autor?: ModelStringInput | null;
+  tag?: string | null;
+  subtitulo?: string | null;
+  views?: string | null;
+  tempodeleitura?: string | null;
+  blog?: Number | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelPostagemFilterInput | null> | null;
@@ -314,6 +349,11 @@ export type ModelSubscriptionPostagemFilterInput = {
   descricao?: ModelSubscriptionStringInput | null;
   imagem?: ModelSubscriptionStringInput | null;
   autor?: ModelSubscriptionStringInput | null;
+  tag?: ModelSubscriptionStringInput | null;
+  subtitulo?: ModelSubscriptionStringInput | null;
+  views?: ModelSubscriptionStringInput | null;
+  tempodeleitura?: ModelSubscriptionStringInput | null;
+  blog?: ModelSubscriptionStringInput | null;
   createdAt?: ModelSubscriptionStringInput | null;
   updatedAt?: ModelSubscriptionStringInput | null;
   and?: Array<ModelSubscriptionPostagemFilterInput | null> | null;
@@ -380,11 +420,16 @@ export type ModelSubscriptionGaleriaFilterInput = {
 export type CreatePostagemMutation = {
   __typename: "Postagem";
   id: string;
-  title: string;
-  categoria: string;
-  descricao: string;
-  imagem: string;
-  autor: string;
+  title: string | null;
+  categoria: string | null;
+  descricao: string | null;
+  imagem: string | null;
+  autor: string | null;
+  tag: string | null;
+  subtitulo: string | null;
+  views: string | null;
+  tempodeleitura: string | null;
+  blog: Number | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -397,6 +442,11 @@ export type UpdatePostagemMutation = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -409,6 +459,11 @@ export type DeletePostagemMutation = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -488,11 +543,16 @@ export type DeleteGaleriaMutation = {
 export type GetPostagemQuery = {
   __typename: "Postagem";
   id: string;
-  title: string;
-  categoria: string;
-  descricao: string;
-  imagem: string;
-  autor: string;
+  title: string | null;
+  categoria: string | null;
+  descricao: string | null;
+  imagem: string | null;
+  autor: string | null;
+  tag: string | null;
+  subtitulo: string | null;
+  views: string | null;
+  tempodeleitura: string | null;
+  blog: Number | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -502,11 +562,16 @@ export type ListPostagemsQuery = {
   items: Array<{
     __typename: "Postagem";
     id: string;
-    title: string;
-    categoria: string;
-    descricao: string;
-    imagem: string;
-    autor: string;
+    title: string | null;
+    categoria: string | null;
+    descricao: string | null;
+    imagem: string | null;
+    autor: string | null;
+    tag?: String | null;
+    subtitulo?: String | null;
+    views?: String | null;
+    tempodeleitura?: String | null;
+    blog?: Number | null;
     createdAt?: string | null;
     updatedAt?: string | null;
   } | null>;
@@ -581,6 +646,11 @@ export type OnCreatePostagemSubscription = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -593,6 +663,11 @@ export type OnUpdatePostagemSubscription = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -605,6 +680,11 @@ export type OnDeletePostagemSubscription = {
   descricao: string;
   imagem: string;
   autor: string;
+  tag: String;
+  subtitulo: String;
+  views: String;
+  tempodeleitura: String;
+  blog: Number;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -699,6 +779,11 @@ export class APIService {
           descricao
           imagem
           autor
+          tag
+          subtitulo
+          views
+          tempodeleitura
+          blog
           createdAt
           updatedAt
         }
@@ -728,6 +813,11 @@ export class APIService {
           descricao
           imagem
           autor
+          tag
+          subtitulo
+          views
+          tempodeleitura
+          blog
           createdAt
           updatedAt
         }
@@ -756,6 +846,11 @@ export class APIService {
           descricao
           imagem
           autor
+          tag
+          subtitulo
+          views
+          tempodeleitura
+          blog
           createdAt
           updatedAt
         }
@@ -997,6 +1092,11 @@ export class APIService {
           descricao
           imagem
           autor
+          tag
+          subtitulo
+          views
+          tempodeleitura
+          blog
           createdAt
           updatedAt
         }
@@ -1025,6 +1125,11 @@ export class APIService {
             descricao
             imagem
             autor
+            tag
+            subtitulo
+            views
+            tempodeleitura
+            blog
             createdAt
             updatedAt
           }

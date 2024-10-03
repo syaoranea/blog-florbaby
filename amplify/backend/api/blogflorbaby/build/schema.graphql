@@ -5,6 +5,18 @@ type Postagem {
   descricao: String!
   imagem: String!
   autor: String!
+  tag: String!
+  subtitulo: String!
+  tempodeleitura: String!
+  views: String!
+  blog: Int!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Blog {
+  id: ID!
+  descricao: String!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -192,6 +204,11 @@ input ModelPostagemFilterInput {
   descricao: ModelStringInput
   imagem: ModelStringInput
   autor: ModelStringInput
+  tag: ModelStringInput
+  subtitulo: ModelStringInput
+  tempodeleitura: ModelStringInput
+  views: ModelStringInput
+  blog: ModelIntInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelPostagemFilterInput]
@@ -202,6 +219,8 @@ input ModelPostagemFilterInput {
 type Query {
   getPostagem(id: ID!): Postagem
   listPostagems(filter: ModelPostagemFilterInput, limit: Int, nextToken: String): ModelPostagemConnection
+  getBlog(id: ID!): Blog
+  listBlogs(filter: ModelBlogFilterInput, limit: Int, nextToken: String): ModelBlogConnection
   getCategoria(id: ID!): categoria
   listCategorias(filter: ModelCategoriaFilterInput, limit: Int, nextToken: String): ModelCategoriaConnection
   getTags(id: ID!): Tags
@@ -216,6 +235,11 @@ input ModelPostagemConditionInput {
   descricao: ModelStringInput
   imagem: ModelStringInput
   autor: ModelStringInput
+  tag: ModelStringInput
+  subtitulo: ModelStringInput
+  tempodeleitura: ModelStringInput
+  views: ModelStringInput
+  blog: ModelIntInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelPostagemConditionInput]
@@ -230,6 +254,11 @@ input CreatePostagemInput {
   descricao: String!
   imagem: String!
   autor: String!
+  tag: String!
+  subtitulo: String!
+  tempodeleitura: String!
+  views: String!
+  blog: Int!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -241,6 +270,11 @@ input UpdatePostagemInput {
   descricao: String
   imagem: String
   autor: String
+  tag: String
+  subtitulo: String
+  tempodeleitura: String
+  views: String
+  blog: Int
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -253,6 +287,9 @@ type Mutation {
   createPostagem(input: CreatePostagemInput!, condition: ModelPostagemConditionInput): Postagem
   updatePostagem(input: UpdatePostagemInput!, condition: ModelPostagemConditionInput): Postagem
   deletePostagem(input: DeletePostagemInput!, condition: ModelPostagemConditionInput): Postagem
+  createBlog(input: CreateBlogInput!, condition: ModelBlogConditionInput): Blog
+  updateBlog(input: UpdateBlogInput!, condition: ModelBlogConditionInput): Blog
+  deleteBlog(input: DeleteBlogInput!, condition: ModelBlogConditionInput): Blog
   createCategoria(input: CreateCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
   updateCategoria(input: UpdateCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
   deleteCategoria(input: DeleteCategoriaInput!, condition: ModelCategoriaConditionInput): categoria
@@ -271,6 +308,11 @@ input ModelSubscriptionPostagemFilterInput {
   descricao: ModelSubscriptionStringInput
   imagem: ModelSubscriptionStringInput
   autor: ModelSubscriptionStringInput
+  tag: ModelSubscriptionStringInput
+  subtitulo: ModelSubscriptionStringInput
+  tempodeleitura: ModelSubscriptionStringInput
+  views: ModelSubscriptionStringInput
+  blog: ModelSubscriptionIntInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionPostagemFilterInput]
@@ -281,6 +323,9 @@ type Subscription {
   onCreatePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["createPostagem"])
   onUpdatePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["updatePostagem"])
   onDeletePostagem(filter: ModelSubscriptionPostagemFilterInput): Postagem @aws_subscribe(mutations: ["deletePostagem"])
+  onCreateBlog(filter: ModelSubscriptionBlogFilterInput): Blog @aws_subscribe(mutations: ["createBlog"])
+  onUpdateBlog(filter: ModelSubscriptionBlogFilterInput): Blog @aws_subscribe(mutations: ["updateBlog"])
+  onDeleteBlog(filter: ModelSubscriptionBlogFilterInput): Blog @aws_subscribe(mutations: ["deleteBlog"])
   onCreateCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["createCategoria"])
   onUpdateCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["updateCategoria"])
   onDeleteCategoria(filter: ModelSubscriptionCategoriaFilterInput): categoria @aws_subscribe(mutations: ["deleteCategoria"])
@@ -290,6 +335,57 @@ type Subscription {
   onCreateGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["createGaleria"])
   onUpdateGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["updateGaleria"])
   onDeleteGaleria(filter: ModelSubscriptionGaleriaFilterInput): Galeria @aws_subscribe(mutations: ["deleteGaleria"])
+}
+
+type ModelBlogConnection {
+  items: [Blog]!
+  nextToken: String
+}
+
+input ModelBlogFilterInput {
+  id: ModelIDInput
+  descricao: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBlogFilterInput]
+  or: [ModelBlogFilterInput]
+  not: ModelBlogFilterInput
+}
+
+input ModelBlogConditionInput {
+  descricao: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBlogConditionInput]
+  or: [ModelBlogConditionInput]
+  not: ModelBlogConditionInput
+}
+
+input CreateBlogInput {
+  id: ID
+  descricao: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input UpdateBlogInput {
+  id: ID!
+  descricao: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+input DeleteBlogInput {
+  id: ID!
+}
+
+input ModelSubscriptionBlogFilterInput {
+  id: ModelSubscriptionIDInput
+  descricao: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionBlogFilterInput]
+  or: [ModelSubscriptionBlogFilterInput]
 }
 
 type ModelCategoriaConnection {

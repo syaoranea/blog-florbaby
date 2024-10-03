@@ -16,98 +16,20 @@
     <div class="container">
       <div class="box-blog-column">
         <div class="col-1">
-          <div class="box-inner-blog-padding">
-                  <div class="cardBlogStyle1">
-                    <div class="cardImage"><a class="tag-up" href="#">Kids' Outfits</a><a href="#"><img src="assets/imgs/page/blog/blog.png" alt="kidify"></a></div>
-                    <div class="cardInfo"><a href="#">
-                        <h2 class="font-42-bold mb-10">Styling Children for Formal Events: Tips for Dressing to Impress</h2></a>
-                      <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                      <p class="font-lg">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                      <div class="mt-25 text-end"><a class="btn btn-arrow-right" href="#">Keep reading<img src="assets/imgs/template/icons/arrow-sm.svg" alt="Kidify"><img class="hover-icon" src="assets/imgs/template/icons/arrow-sm.svg" alt="Kidify"></a></div>
-                    </div>
-                  </div>
-            <div class="row">
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Fashion Trends</a><a href="#"><img src="assets/imgs/page/blog/blog2.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">From Cute to Cool: Transforming Your Baby's Wardrobe as They Grow</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
+          <div class="box-inner-blog-padding" *ngFor="let data of dataList">
+              <div class="cardBlogStyle1">
+                <div class="cardImage"><a class="tag-up" href="#">{{data.categoria}}</a><a href="#"><img src="assets/imgs/page/blog/blog.png" alt="kidify"></a></div>
+                <div class="cardInfo"><a href="#">
+                    <h2 class="font-42-bold mb-10">{{data.title}}</h2></a>
+                  <div class="box-meta-post mb-20"><span class="font-sm neutral-500">{{data.createdAt  | datacustom }}</span><span class="font-sm neutral-500">{{data.tempodeleitura}}</span><span class="font-sm neutral-500">{{data.views}} views</span></div>
+                  <p class="font-lg">{{data.descricao}}</p>
+                  <div class="mt-25 text-end"><a class="btn btn-arrow-right" href="#">Continue Lendo<img src="assets/imgs/template/icons/arrow-sm.svg" alt="Continue Lendo"><img class="hover-icon" src="assets/imgs/template/icons/arrow-sm.svg" alt="Kidify"></a></div>
+                </div>
               </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Favorite Brands</a><a href="#"><img src="assets/imgs/page/blog/blog3.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Gender-Neutral Fashion for Kids: Breaking Down Stereotypes</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Trends</a><a href="#"><img src="assets/imgs/page/blog/blog4.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Product Review: Best Sunscreen for Kids' Sensitive Skin</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Trends</a><a href="#"><img src="assets/imgs/page/blog/blog.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Product Review: Best Sunscreen for Kids' Sensitive Skin</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Fashion Trends</a><a href="#"><img src="assets/imgs/page/blog/blog2.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">From Cute to Cool: Transforming Your Baby's Wardrobe as They Grow</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Favorite Brands</a><a href="#"><img src="assets/imgs/page/blog/blog3.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Gender-Neutral Fashion for Kids: Breaking Down Stereotypes</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Trends</a><a href="#"><img src="assets/imgs/page/blog/blog4.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Product Review: Best Sunscreen for Kids' Sensitive Skin</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-              <div class="col-md-6">
-                      <div class="cardBlogStyle2">
-                        <div class="cardImage"><a class="tag-up" href="#">Trends</a><a href="#"><img src="assets/imgs/page/blog/blog.png" alt="kidify"></a></div>
-                        <div class="cardInfo"><a href="#">
-                            <h2 class="font-xl text-bold mb-10">Product Review: Best Sunscreen for Kids' Sensitive Skin</h2></a>
-                          <div class="box-meta-post mb-20"><span class="font-sm neutral-500">August 30, 2023</span><span class="font-sm neutral-500">4 Mins read</span><span class="font-sm neutral-500">520 views</span></div>
-                          <p class="font-md">If you're looking for some inspiration to dress up your child, you've come to the right place! Check out our top 10 picks for adorable outfits that will make your little fashionista stand out.</p>
-                        </div>
-                      </div>
-              </div>
-            </div>
+
+
+
+
           </div>
           <div class="mb-50">
             <nav class="box-pagination">

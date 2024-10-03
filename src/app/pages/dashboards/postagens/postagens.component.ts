@@ -15,6 +15,7 @@ import { ListService } from '../../tables/listjs/listjs.service';
 import { ListJsModel } from '../../tables/listjs/listjs.model';
 import { listSortEvent , NgbdListSortableHeader} from '../../tables/listjs/listjs-sortable.directive';
 import { APIService, CreatePostagemInput, DeletePostagemInput, UpdatePostagemInput } from 'src/app/API.service';
+import { sub } from 'date-fns';
 
 
 @Component({
@@ -77,6 +78,11 @@ export class PostagensComponent {
       author: new FormControl('', [Validators.required, Validators.maxLength(100)]),
       categoria: new FormControl('', [Validators.required]),
       imagem: new FormControl('', [Validators.required]),
+      tag: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      subtitulo: new FormControl('', [Validators.required]),
+      views: new FormControl('', [Validators.required]),
+      tempodeleitura: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+
     });
 
     this.api.ListPostagems().then((res)=> {
@@ -139,6 +145,10 @@ export class PostagensComponent {
           descricao: this.listJsForm.value.description,
           imagem: this.listJsForm.value.imagem,
           autor: this.listJsForm.value.author,
+          tag: this.listJsForm.value.tag,
+          subtitulo: this.listJsForm.value.subtitulo,
+          views: this.listJsForm.value.views,
+          tempodeleitura: this.listJsForm.value.tempodeleitura,
         };
         this.ListJsDatas = this.ListJsDatas.map((data: { id: any; }) => data.id === this.listJsForm.get('ids')?.value ? { ...data, ...postDetails } : data)
 
@@ -151,12 +161,22 @@ export class PostagensComponent {
         const categoria = this.listJsForm.get('categoria')?.value;
         const autor = this.listJsForm.get('author')?.value;
         const imagem = this.listJsForm.get('imagem')?.value;
+        const tag =  this.listJsForm.get('tag')?.value;
+        const subtitulo = this.listJsForm.get('subtitulo')?.value;
+        const views = this.listJsForm.get('views')?.value;
+        const tempodeleitura = this.listJsForm.get('tempodeleitura')?.value;
+        const blog = 1;
           const postDetails = {
             title,
             descricao,
             categoria,
             autor,
             imagem,
+            tag,
+            subtitulo,
+            views,
+            tempodeleitura,
+            blog
           }
         //title: string;    categoria: string;    descricao: string;    imagem: string;    autor: string;
         console.log(postDetails);
@@ -246,6 +266,11 @@ export class PostagensComponent {
     this.listJsForm.get('author')?.setValue(listData.autor);
     this.listJsForm.get('categoria')?.setValue(listData.categoria);
     this.listJsForm.get('imagem')?.setValue(listData.imagem);
+    this.listJsForm.get('subtitulo')?.setValue(listData.subtitulo);
+    this.listJsForm.get('tag')?.setValue(listData.tag);
+    this.listJsForm.get('tempodeleitura')?.setValue(listData.tempodeleitura);
+    this.listJsForm.get('views')?.setValue(listData.views);
+   // this.listJsForm.get('blog')?.setValue(listData.blog);
   }
 
   // Sorting

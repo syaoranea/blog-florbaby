@@ -3,5 +3,5 @@
     "DynamoDBBillingMode": "PAY_PER_REQUEST",
     "DynamoDBEnableServerSideEncryption": false,
     "S3DeploymentBucket": "amplify-blogflorbaby-dev-672ae-deployment",
-    "S3DeploymentRootKey": "amplify-appsync-files/749a2318f726c1329ad9e9e8700d25a811313a72"
+    "S3DeploymentRootKey": "amplify-appsync-files/f5b04e42e6e51f91bfaef9e437567007a4d23c47"
 }

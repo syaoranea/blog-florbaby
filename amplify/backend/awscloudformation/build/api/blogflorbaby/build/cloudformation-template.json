@@ -111,7 +111,7 @@
             "ApiId"
           ]
         },
-        "Expires": 1728265877
+        "Expires": 1728351919
       }
     },
     "GraphQLAPINONEDS95A13CF0": {
@@ -190,6 +190,94 @@
                 "Ref": "S3DeploymentRootKey"
               },
               "/stacks/Postagem.json"
+            ]
+          ]
+        }
+      },
+      "DependsOn": [
+        "GraphQLAPITransformerSchema3CB2AE18"
+      ]
+    },
+    "Blog": {
+      "Type": "AWS::CloudFormation::Stack",
+      "Properties": {
+        "Parameters": {
+          "DynamoDBModelTableReadIOPS": {
+            "Ref": "DynamoDBModelTableReadIOPS"
+          },
+          "DynamoDBModelTableWriteIOPS": {
+            "Ref": "DynamoDBModelTableWriteIOPS"
+          },
+          "DynamoDBBillingMode": {
+            "Ref": "DynamoDBBillingMode"
+          },
+          "DynamoDBEnablePointInTimeRecovery": {
+            "Ref": "DynamoDBEnablePointInTimeRecovery"
+          },
+          "DynamoDBEnableServerSideEncryption": {
+            "Ref": "DynamoDBEnableServerSideEncryption"
+          },
+          "referencetotransformerrootstackenv10C5A902Ref": {
+            "Ref": "env"
+          },
+          "referencetotransformerrootstackGraphQLAPI20497F53ApiId": {
+            "Fn::GetAtt": [
+              "GraphQLAPI",
+              "ApiId"
+            ]
+          },
+          "referencetotransformerrootstackS3DeploymentBucket7592718ARef": {
+            "Ref": "S3DeploymentBucket"
+          },
+          "referencetotransformerrootstackS3DeploymentRootKeyA71EA735Ref": {
+            "Ref": "S3DeploymentRootKey"
+          },
+          "referencetotransformerrootstackPostagemNestedStackPostagemNestedStackResourceA03BE13FOutputstransformerrootstackPostagemQuerygetPostagempostAuth0FunctionQuerygetPostagempostAuth0FunctionAppSyncFunction7277DAEFFunctionId": {
+            "Fn::GetAtt": [
+              "Postagem",
+              "Outputs.transformerrootstackPostagemQuerygetPostagempostAuth0FunctionQuerygetPostagempostAuth0FunctionAppSyncFunction7277DAEFFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackPostagemNestedStackPostagemNestedStackResourceA03BE13FOutputstransformerrootstackPostagemMutationcreatePostageminit0FunctionMutationcreatePostageminit0FunctionAppSyncFunctionBEED8804FunctionId": {
+            "Fn::GetAtt": [
+              "Postagem",
+              "Outputs.transformerrootstackPostagemMutationcreatePostageminit0FunctionMutationcreatePostageminit0FunctionAppSyncFunctionBEED8804FunctionId"
+            ]
+          },
+          "referencetotransformerrootstackPostagemNestedStackPostagemNestedStackResourceA03BE13FOutputstransformerrootstackPostagemMutationupdatePostageminit0FunctionMutationupdatePostageminit0FunctionAppSyncFunction32C3307FFunctionId": {
+            "Fn::GetAtt": [
+              "Postagem",
+              "Outputs.transformerrootstackPostagemMutationupdatePostageminit0FunctionMutationupdatePostageminit0FunctionAppSyncFunction32C3307FFunctionId"
+            ]
+          },
+          "referencetotransformerrootstackPostagemNestedStackPostagemNestedStackResourceA03BE13FOutputstransformerrootstackPostagemSubscriptionOnCreatePostagemDataResolverFnSubscriptionOnCreatePostagemDataResolverFnAppSyncFunctionF925C039FunctionId": {
+            "Fn::GetAtt": [
+              "Postagem",
+              "Outputs.transformerrootstackPostagemSubscriptionOnCreatePostagemDataResolverFnSubscriptionOnCreatePostagemDataResolverFnAppSyncFunctionF925C039FunctionId"
+            ]
+          }
+        },
+        "TemplateURL": {
+          "Fn::Join": [
+            "",
+            [
+              "https://s3.",
+              {
+                "Ref": "AWS::Region"
+              },
+              ".",
+              {
+                "Ref": "AWS::URLSuffix"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentBucket"
+              },
+              "/",
+              {
+                "Ref": "S3DeploymentRootKey"
+              },
+              "/stacks/Blog.json"
             ]
           ]
         }
@@ -506,6 +594,7 @@
         "GraphQLAPI",
         "GraphQLAPITransformerSchema3CB2AE18",
         "Postagem",
+        "Blog",
         "categoria",
         "Tags",
         "Galeria"

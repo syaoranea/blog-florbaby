@@ -53,6 +53,12 @@ export class PostagensComponent {
   @ViewChildren(NgbdListSortableHeader) headers!: QueryList<NgbdListSortableHeader>;
   @ViewChild('showModal', { static: false }) showModal?: ModalDirective;
   @ViewChild('deleteModal', { static: false }) deleteModal?: ModalDirective;
+  editorConfig = {
+    base_url: '/tinymce',
+    suffix: '.min',
+    plugin: 'lists link image table wordcount',
+    menubar: false
+  }
   constructor(private api: APIService,public service: ListService, private formBuilder: UntypedFormBuilder, private pipe: DecimalPipe) {
     this.ListJsList = service.countries$;
     this.total = service.total$;

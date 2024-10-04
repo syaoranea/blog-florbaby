@@ -35,6 +35,7 @@ import { TablesModule } from '../tables/tables.module';
 import { TableRoutingModule } from '../tables/table-routing.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NgPipesModule } from 'ngx-pipes';
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 
 
 
@@ -66,7 +67,11 @@ import { NgPipesModule } from 'ngx-pipes';
     TableRoutingModule,
     ModalModule,
     NgPipesModule,
-  
+    EditorModule,
+
+  ],
+  providers: [
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'}
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })

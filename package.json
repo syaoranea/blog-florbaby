@@ -44,6 +44,7 @@
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
     "@nicky-lenaers/ngx-scroll-to": "^14.0.0",
+    "@tinymce/tinymce-angular": "^8.0.1",
     "@types/leaflet-routing-machine": "^3.2.5",
     "@types/prismjs": "^1.26.3",
     "angular-ng-autocomplete": "^2.0.12",

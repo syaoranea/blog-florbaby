@@ -324,11 +324,19 @@
                     <div class="mb-3 d-flex-container">
                         <div>
                           <label for="email-field" class="form-label">Autor</label>
-                        <input type="email" id="email-field" class="form-control" placeholder="Enter author" formControlName="author" [ngClass]="{ 'is-invalid': submitted && form['author'].errors }" required />
+                        <input type="email" id="email-field" class="form-control" placeholder="Enter author" formControlName="author" [ngClass]="{ 'is-invalid': submitted && form['author'].errors }" required width="40"/>
                         </div>
                         <div>
                           <label for="phone-field" class="form-label">categoria</label>
-                        <input type="text" id="phone-field" class="form-control" placeholder="Enter categoria." formControlName="categoria" [ngClass]="{ 'is-invalid': submitted && form['categoria'].errors }" required />
+                        <input type="text" id="phone-field" class="form-control" placeholder="Enter categoria." formControlName="categoria" [ngClass]="{ 'is-invalid': submitted && form['categoria'].errors }" required width="40"/>
+                        </div>
+                        <div>
+                          <label for="phone-field" class="form-label">Tempo de Leitura</label>
+                        <input type="text" id="phone-field" class="form-control" placeholder="Enter Tempo de Leitura" formControlName="tempodeleitura" width="40" />
+                        </div>
+                        <div>
+                          <label for="phone-field" class="form-label">Quantidade de Views</label>
+                          <input type="text" id="phone-field" class="form-control" placeholder="Enter Tempo de Leitura" formControlName="views"  width="40"/>
                         </div>
                     </div>
 
@@ -342,17 +350,6 @@
                     <input type="text" id="phone-field" class="form-control" placeholder="Enter SubTitulo." formControlName="subtitulo"  />
                   </div>
 
-
-                <div class="mb-3 d-flex-container ">
-                  <div>
-                    <label for="phone-field" class="form-label">Tempo de Leitura</label>
-                  <input type="text" id="phone-field" class="form-control" placeholder="Enter Tempo de Leitura" formControlName="tempodeleitura" width="50" />
-                  </div>
-                  <div>
-                    <label for="phone-field" class="form-label">Quantidade de Views</label>
-                    <input type="text" id="phone-field" class="form-control" placeholder="Enter Tempo de Leitura" formControlName="views"  width="50"/>
-                  </div>
-                </div>
 
                     <div class="mb-3">
                         <label for="date-field" class="form-label">imagem</label>
@@ -369,12 +366,14 @@
                         </select>
                     </div> -->
 
-                    <div class="mb-3">
+                    <editor [init]="editorConfig" formControlName="description">
+                   </editor>
+
+                    <!-- <div class="mb-3">
                       <label for="date-field" class="form-label">Descrição</label>
                       <textarea class="form-control" aria-label="With textarea" mwlFlatpickr formControlName="description" rows="8"></textarea>
-                      <!-- <input type="text-area" id="date-field" class="form-control" mwlFlatpickr formControlName="description" [ngClass]="{ 'is-invalid': submitted && form['description'].errors }"> -->
                       <div class="invalid-feedback">Please select a description.</div>
-                  </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <div class="hstack gap-2 justify-content-end">

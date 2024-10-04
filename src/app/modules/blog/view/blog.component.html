@@ -22,13 +22,10 @@
                 <div class="cardInfo"><a href="#">
                     <h2 class="font-42-bold mb-10">{{data.title}}</h2></a>
                   <div class="box-meta-post mb-20"><span class="font-sm neutral-500">{{data.createdAt  | datacustom }}</span><span class="font-sm neutral-500">{{data.tempodeleitura}}</span><span class="font-sm neutral-500">{{data.views}} views</span></div>
-                  <p class="font-lg">{{data.descricao}}</p>
+                  <div [innerHTML]="data.descricao"></div>
                   <div class="mt-25 text-end"><a class="btn btn-arrow-right" href="#">Continue Lendo<img src="assets/imgs/template/icons/arrow-sm.svg" alt="Continue Lendo"><img class="hover-icon" src="assets/imgs/template/icons/arrow-sm.svg" alt="Kidify"></a></div>
                 </div>
               </div>
-
-
-
 
           </div>
           <div class="mb-50">

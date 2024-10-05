@@ -5,10 +5,16 @@ import { AuthGuard } from './core/guards/auth.guard';
 // Component
 import { LayoutComponent } from './layouts/layout.component';
 import { BlogComponent } from './modules/blog/view/blog.component';
+import { SingleComponent } from './modules/blog/page/single/single.component';
 
 const routes: Routes = [
-  { path: 'blog', component: BlogComponent},
-  { path: '', component: LayoutComponent, loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule), canActivate: [AuthGuard] },
+  { path: 'blog', component: BlogComponent,
+  },
+  { path: 'postagem/:id', component: SingleComponent },
+  { path: '', component: LayoutComponent,
+    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
+    canActivate: [AuthGuard]
+  },
   { path: 'auth', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },
   { path: 'pages',loadChildren: () => import('./extraspages/extraspages.module').then(m => m.ExtraspagesModule)},
 ];

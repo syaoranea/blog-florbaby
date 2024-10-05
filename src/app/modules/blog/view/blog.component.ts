@@ -9,6 +9,8 @@ import { FooterComponent } from "../../../shared/components/footer/footer.compon
 import { CommonModule } from '@angular/common';
 import { APIService, ListPostagemsQuery } from 'src/app/API.service';
 import { DatacustomPipe } from '../components/datacustom.pipe';
+import { Router, RouterModule } from '@angular/router';
+import { BlogRoutingModule } from '../blog-routing.module';
 
 @Component({
   selector: 'app-blog',
@@ -22,7 +24,9 @@ import { DatacustomPipe } from '../components/datacustom.pipe';
     HeaderComponent,
     FooterComponent,
     CommonModule,
-    DatacustomPipe
+    DatacustomPipe,
+    RouterModule
+
   ],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
@@ -33,6 +37,7 @@ export class BlogComponent {
 
   constructor(
     private api: APIService,
+    private route: Router
   ) {  }
 
   ngOnInit(): void {
@@ -44,11 +49,16 @@ export class BlogComponent {
       if (res) {
         console.log(res.items , 1);
         this.dataList = res.items;
-        console.log(this.dataList)  // Atribuir apenas a parte 'items' do resultado
+        console.log(this.dataList);
       }
     }).catch((error)=>{
-      console.log(error)
+      console.log(error);
     })
+  }
+
+  onGoToSingle(title: string) {
+    console.log(title);
+    this.route.navigate(['/postagem', title]);
   }
 
 }

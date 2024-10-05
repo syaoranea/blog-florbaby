@@ -15,6 +15,7 @@ export class AuthGuard  {
     ) { }
 
     async canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<boolean> {
+      console.log('AuthGuard#canActivate called, isAuthenticated:');
       try {
         if (environment.defaultauth === 'amplify') {
           const user = await this.authenticationService.getCurrentUser();

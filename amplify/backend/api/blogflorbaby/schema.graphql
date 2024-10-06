@@ -13,7 +13,7 @@ type Postagem @model {
   subtitulo: String!
   tempodeleitura: String!
   views: String!
-  blog: Int!
+  blog: String!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

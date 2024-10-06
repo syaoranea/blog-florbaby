@@ -1,3 +1,4 @@
+import { BlogService } from './../service/blog.service';
 import { Component } from '@angular/core';
 import { CategoriasComponent } from '../components/categorias/categorias.component';
 import { MaisVistosPostsComponent } from '../components/mais-vistos-posts/mais-vistos-posts.component';
@@ -37,7 +38,8 @@ export class BlogComponent {
 
   constructor(
     private api: APIService,
-    private route: Router
+    private route: Router,
+    private service: BlogService
   ) {  }
 
   ngOnInit(): void {
@@ -56,9 +58,12 @@ export class BlogComponent {
     })
   }
 
-  onGoToSingle(title: string) {
-    console.log(title);
-    this.route.navigate(['/postagem', title]);
+  onGoToSingle(data: any) {
+    this.service.setId(data.blog);
+    this.service.setPostagem(data)
+    const titulo = data.title.replace(/\s+/g, '-');
+    console.log(titulo);
+    this.route.navigate(['/postagem', titulo]);
   }
 
 }

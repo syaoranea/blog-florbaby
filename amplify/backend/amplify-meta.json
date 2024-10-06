@@ -22,7 +22,9 @@
           "defaultAuthentication": {
             "authenticationType": "API_KEY",
             "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
+              "apiKeyExpirationDays": 365,
+              "apiKeyExpirationDate": "2025-10-05T13:12:20.218Z",
+              "description": "da2-yyftoqspynfczd6na3koh2dmeq"
             }
           },
           "additionalAuthenticationProviders": []
@@ -35,8 +37,8 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/api/cloudformation-template.json",
         "logicalId": "apiblogflorbaby"
       },
-      "lastPushTimeStamp": "2024-10-01T01:48:16.981Z",
-      "lastPushDirHash": "WOW7iAF0UVmPukE+oAdpcgymIzw="
+      "lastPushTimeStamp": "2024-10-05T19:27:20.869Z",
+      "lastPushDirHash": "erXOr4BqTbsNolnlzjMk0pUGPhY="
     }
   },
   "auth": {
@@ -67,7 +69,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-blogflorbaby-dev-672ae-deployment/amplify-cfn-templates/auth/blogflorbaby62da28fb-cloudformation-template.json",
         "logicalId": "authblogflorbaby62da28fb"
       },
-      "lastPushTimeStamp": "2024-10-01T01:48:15.818Z",
+      "lastPushTimeStamp": "2024-10-05T19:27:19.817Z",
       "output": {
         "UserPoolId": "us-east-1_l4kmhh2hb",
         "AppClientIDWeb": "5jmgnejbklb36ob1n2j585mlpc",

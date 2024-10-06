@@ -162,37 +162,9 @@ export class PostagensComponent {
         this.showModal?.hide()
         return
       }
-        const title = this.listJsForm.get('title')?.value;
-        const descricao = this.listJsForm.get('description')?.value;
-        const categoria = this.listJsForm.get('categoria')?.value;
-        const autor = this.listJsForm.get('author')?.value;
-        const imagem = this.listJsForm.get('imagem')?.value;
-        const tag =  this.listJsForm.get('tag')?.value;
-        const subtitulo = this.listJsForm.get('subtitulo')?.value;
-        const views = this.listJsForm.get('views')?.value;
-        const tempodeleitura = this.listJsForm.get('tempodeleitura')?.value;
-        const blog = 1;
-          const postDetails = {
-            title,
-            descricao,
-            categoria,
-            autor,
-            imagem,
-            tag,
-            subtitulo,
-            views,
-            tempodeleitura,
-            blog
-          }
-        //title: string;    categoria: string;    descricao: string;    imagem: string;    autor: string;
-        console.log(postDetails);
-        this.ListJsDatas.push({id: 1, ...postDetails});
-        this.api.CreatePostagem(postDetails as CreatePostagemInput).then(res=>{
-          console.log(res)
-        }).catch(error=>{
-          console.log(error)
-        });
-        console.log('saiu')
+
+      const blog = this.creatBlog();
+
 
 
     }
@@ -203,6 +175,49 @@ export class PostagensComponent {
     this.submitted = true
   }
 
+  creatPostagem(blog: string){
+    const title = this.listJsForm.get('title')?.value;
+    const descricao = this.listJsForm.get('description')?.value;
+    const categoria = this.listJsForm.get('categoria')?.value;
+    const autor = this.listJsForm.get('author')?.value;
+    const imagem = this.listJsForm.get('imagem')?.value;
+    const tag =  this.listJsForm.get('tag')?.value;
+    const subtitulo = this.listJsForm.get('subtitulo')?.value;
+    const views = this.listJsForm.get('views')?.value;
+    const tempodeleitura = this.listJsForm.get('tempodeleitura')?.value;
+      const postDetails = {
+        title,
+        descricao,
+        categoria,
+        autor,
+        imagem,
+        tag,
+        subtitulo,
+        views,
+        tempodeleitura,
+        blog
+      }
+    //title: string;    categoria: string;    descricao: string;    imagem: string;    autor: string;
+    console.log(postDetails);
+    this.ListJsDatas.push({id: 1, ...postDetails});
+    this.api.CreatePostagem(postDetails as CreatePostagemInput).then(res=>{
+      console.log(res)
+    }).catch(error=>{
+      console.log(error)
+    });
+  }
+
+  async creatBlog() {
+    const blogDetails = {
+      descricao: this.listJsForm.get('description')?.value
+    }
+    this.api.CreateBlog(blogDetails).then((res)=>{
+      console.log(res.id)
+       this.creatPostagem(res.id);
+    }).catch((error)=>{
+      console.log( error);
+    });
+  }
   // The master checkbox will check/ uncheck all items
   checkUncheckAll(ev: any) {
     this.ListJsDatas.forEach((x: { state: any; }) => x.state = ev.target.checked)

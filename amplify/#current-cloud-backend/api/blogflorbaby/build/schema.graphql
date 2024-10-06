@@ -9,7 +9,7 @@ type Postagem {
   subtitulo: String!
   tempodeleitura: String!
   views: String!
-  blog: Int!
+  blog: String!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -208,7 +208,7 @@ input ModelPostagemFilterInput {
   subtitulo: ModelStringInput
   tempodeleitura: ModelStringInput
   views: ModelStringInput
-  blog: ModelIntInput
+  blog: ModelStringInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelPostagemFilterInput]
@@ -239,7 +239,7 @@ input ModelPostagemConditionInput {
   subtitulo: ModelStringInput
   tempodeleitura: ModelStringInput
   views: ModelStringInput
-  blog: ModelIntInput
+  blog: ModelStringInput
   createdAt: ModelStringInput
   updatedAt: ModelStringInput
   and: [ModelPostagemConditionInput]
@@ -258,7 +258,7 @@ input CreatePostagemInput {
   subtitulo: String!
   tempodeleitura: String!
   views: String!
-  blog: Int!
+  blog: String!
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -274,7 +274,7 @@ input UpdatePostagemInput {
   subtitulo: String
   tempodeleitura: String
   views: String
-  blog: Int
+  blog: String
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -312,7 +312,7 @@ input ModelSubscriptionPostagemFilterInput {
   subtitulo: ModelSubscriptionStringInput
   tempodeleitura: ModelSubscriptionStringInput
   views: ModelSubscriptionStringInput
-  blog: ModelSubscriptionIntInput
+  blog: ModelSubscriptionStringInput
   createdAt: ModelSubscriptionStringInput
   updatedAt: ModelSubscriptionStringInput
   and: [ModelSubscriptionPostagemFilterInput]

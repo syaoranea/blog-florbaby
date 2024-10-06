@@ -39,7 +39,14 @@ export type CreatePostagemInput = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type CreateBlogInput = {
+  id?: string | null;
+  descricao: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -54,14 +61,21 @@ export type ModelPostagemConditionInput = {
   subtitulo?: ModelStringInput | null;
   views?: ModelStringInput | null;
   tempodeleitura?: ModelStringInput | null;
-  blog?: ModelNumberInput | null;
+  blog?: ModelStringInput | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelPostagemConditionInput | null> | null;
   or?: Array<ModelPostagemConditionInput | null> | null;
   not?: ModelPostagemConditionInput | null;
 };
-
+export type ModelBlogConditionInput = {
+  descricao?: ModelStringInput | null;
+  createdAt?: ModelStringInput | null;
+  updatedAt?: ModelStringInput | null;
+  and?: Array<ModelBlogConditionInput | null> | null;
+  or?: Array<ModelBlogConditionInput | null> | null;
+  not?: ModelBlogConditionInput | null;
+};
 export type ModelStringInput = {
   ne?: string | null;
   eq?: string | null;
@@ -123,7 +137,15 @@ export type Postagem = {
   subtitulo: string | null;
   views: string | null;
   tempodeleitura: string | null;
-  blog: Number | null;
+  blog: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type Blog = {
+  __typename: "Blog";
+  id: string;
+  descricao: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -139,7 +161,7 @@ export type UpdatePostagemInput = {
   subtitulo?: string | null;
   views?: string | null;
   tempodeleitura?: string | null;
-  blog?: Number | null;
+  blog?: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -264,7 +286,7 @@ export type ModelPostagemFilterInput = {
   subtitulo?: string | null;
   views?: string | null;
   tempodeleitura?: string | null;
-  blog?: Number | null;
+  blog?: string | null;
   createdAt?: ModelStringInput | null;
   updatedAt?: ModelStringInput | null;
   and?: Array<ModelPostagemFilterInput | null> | null;
@@ -429,7 +451,15 @@ export type CreatePostagemMutation = {
   subtitulo: string | null;
   views: string | null;
   tempodeleitura: string | null;
-  blog: Number | null;
+  blog: string | null;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type CreateBlogMutation = {
+  __typename: "Blog";
+  id: string;
+  descricao: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -446,7 +476,7 @@ export type UpdatePostagemMutation = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -463,7 +493,7 @@ export type DeletePostagemMutation = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -552,7 +582,7 @@ export type GetPostagemQuery = {
   subtitulo: string | null;
   views: string | null;
   tempodeleitura: string | null;
-  blog: Number | null;
+  blog: string | null;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -571,7 +601,7 @@ export type ListPostagemsQuery = {
     subtitulo?: String | null;
     views?: String | null;
     tempodeleitura?: String | null;
-    blog?: Number | null;
+    blog?: string | null;
     createdAt?: string | null;
     updatedAt?: string | null;
   } | null>;
@@ -582,6 +612,14 @@ export type GetCategoriaQuery = {
   __typename: "categoria";
   id: string;
   nome: string;
+  createdAt?: string | null;
+  updatedAt?: string | null;
+};
+
+export type GetBlogQuery = {
+  __typename: "blog";
+  id: string;
+  descricao: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -650,7 +688,7 @@ export type OnCreatePostagemSubscription = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -667,7 +705,7 @@ export type OnUpdatePostagemSubscription = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -684,7 +722,7 @@ export type OnDeletePostagemSubscription = {
   subtitulo: String;
   views: String;
   tempodeleitura: String;
-  blog: Number;
+  blog: string;
   createdAt?: string | null;
   updatedAt?: string | null;
 };
@@ -766,6 +804,31 @@ export type OnDeleteGaleriaSubscription = {
 })
 export class APIService {
    client = generateClient();
+   async CreateBlog(
+    input: CreateBlogInput,
+    condition?: ModelBlogConditionInput
+  ): Promise<CreateBlogMutation> {
+    const statement = `mutation CreateBlog($input: CreateBlogInput!, $condition: ModelBlogConditionInput) {
+        createBlog(input: $input, condition: $condition) {
+          __typename
+          id
+          descricao
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await this.client.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    console.log(response)
+    return <CreateBlogMutation>response.data.createBlog;
+  }
   async CreatePostagem(
     input: CreatePostagemInput,
     condition?: ModelPostagemConditionInput
@@ -1150,6 +1213,24 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <ListPostagemsQuery>response.data.listPostagems;
+  }
+  async GetBlog(id: string): Promise<GetBlogQuery> {
+    const statement = `query GetBlog($id: ID!) {
+        getBlog(id: $id) {
+          __typename
+          id
+          descricao
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await this.client.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetBlogQuery>response.data.getBlog;
   }
   async GetCategoria(id: string): Promise<GetCategoriaQuery> {
     const statement = `query GetCategoria($id: ID!) {

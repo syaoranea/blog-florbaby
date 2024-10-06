@@ -88,6 +88,7 @@ export class PostagensComponent {
       subtitulo: new FormControl('', [Validators.required]),
       views: new FormControl('', [Validators.required]),
       tempodeleitura: new FormControl('', [Validators.required, Validators.maxLength(100)]),
+      minidescription: new FormControl('', [Validators.required]),
 
     });
 
@@ -148,13 +149,14 @@ export class PostagensComponent {
           id: this.listJsForm.value.ids,
           title: this.listJsForm.value.title,
           categoria: this.listJsForm.value.categoria,
-          descricao: this.listJsForm.value.description,
+         /*  descricao: this.listJsForm.value.description, */
           imagem: this.listJsForm.value.imagem,
           autor: this.listJsForm.value.author,
           tag: this.listJsForm.value.tag,
           subtitulo: this.listJsForm.value.subtitulo,
           views: this.listJsForm.value.views,
           tempodeleitura: this.listJsForm.value.tempodeleitura,
+          descricao: this.listJsForm.value.minidescription,
         };
         this.ListJsDatas = this.ListJsDatas.map((data: { id: any; }) => data.id === this.listJsForm.get('ids')?.value ? { ...data, ...postDetails } : data)
 
@@ -177,7 +179,7 @@ export class PostagensComponent {
 
   creatPostagem(blog: string){
     const title = this.listJsForm.get('title')?.value;
-    const descricao = this.listJsForm.get('description')?.value;
+    const descricao = this.listJsForm.get('minidescription')?.value;
     const categoria = this.listJsForm.get('categoria')?.value;
     const autor = this.listJsForm.get('author')?.value;
     const imagem = this.listJsForm.get('imagem')?.value;

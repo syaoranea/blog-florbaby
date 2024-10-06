@@ -18,32 +18,26 @@
   <section class="section block-blog-single">
     <div class="container">
       <div class="top-head-blog">
-        <div class="text-center"><a class="label-tag mb-15" href="#">Kids' Outfits</a>
+        <div class="text-center"><a class="label-tag mb-15" href="#">{{dataPostagem.categoria}}</a>
           <h2 class="font-4xl-bold">{{dataPostagem.title}}</h2>
-          <div class="box-author"><img src="assets/imgs/page/blog-single/author.png" alt="kidify">
             <div class="author-info">
-              <div class="author-name">{{dataPostagem.autor}}</div>
-              <div class="post-meta"><span class="mr-20">{{dataPostagem.createdAt  | datacustom }}</span><span>{{dataPostagem.tempodeleitura}}</span></div>
+              <div class="post-meta"><span class="mr-20">{{dataPostagem.createdAt  | datacustom }}</span></div>
             </div>
-          </div>
+
         </div>
       </div>
-      <div class="feature-image"><img src="assets/imgs/page/blog-single/img.png" alt="kidify"></div>
+      <div class="feature-image img-p"><img src="{{dataPostagem.imagem}}"  alt="kidify"></div>
       <div class="content-detail">
         <div [innerHTML]="dataBlog.descricao"></div>
       </div>
       <div class="box-comments">
-        <div class="list-comments">
+        <div class="list-comments mb-3">
           <div class="item-comment">
-            <div class="item-comment-image"><img src="assets/imgs/page/blog-single/author2.png" alt="kidify"></div>
-            <div class="item-comment-info">
-              <p class="font-xl-bold mb-5">Julia Kaim</p>
-              <p class="font-lg">Julia Kaim is a writer who has a passion for storytelling. With a background in journalism and creative writing, she has a talent for crafting compelling narratives that engage readers and leave a lasting impression.</p>
-            </div>
           </div>
         </div>
-        <div class="form-comment">
-          <h2 class="font-3xl-bold title-comment">Leave a comment</h2>
+        <div class="form-comment mb-6 fot">
+          <h2 class="font-3xl-bold title-comment">Deixe um comentário
+          </h2>
           <form action="#">
             <div class="row">
               <div class="col-lg-12">
@@ -75,4 +69,4 @@
 
 </main>
 
-<app-footer></app-footer>
+<app-footer  class="fot"></app-footer>

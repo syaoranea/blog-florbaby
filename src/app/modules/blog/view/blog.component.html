@@ -18,8 +18,8 @@
         <div class="col-1">
           <div class="box-inner-blog-padding" *ngFor="let data of dataList">
               <div class="cardBlogStyle1">
-                <div class="cardImage"><a class="tag-up" href="#">{{data.categoria}}</a><a href="#"><img src="assets/imgs/page/blog/blog.png" alt="kidify"></a></div>
-                <div class="cardInfo"><a href="#">
+                <div class="cardImage"><a class="tag-up" href="#">{{data.categoria}}</a><a (click)="onGoToSingle(data)"><img src="{{data.imagem}}" alt="kidify"></a></div>
+                <div class="cardInfo"><a (click)="onGoToSingle(data)">
                     <h2 class="font-42-bold mb-10">{{data.title}}</h2></a>
                   <div class="box-meta-post mb-20"><span class="font-sm neutral-500">{{data.createdAt  | datacustom }}</span><span class="font-sm neutral-500">{{data.tempodeleitura}}</span><span class="font-sm neutral-500">{{data.views}} views</span></div>
                   <div [innerHTML]="data.descricao"></div>
@@ -114,4 +114,4 @@
   </div>
 </main>
 
-<app-footer></app-footer>
+<app-footer class="fot"></app-footer>

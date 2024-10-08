@@ -1,6 +1,6 @@
 <div class="sidebar-border">
   <h5 class="font-3xl-bold head-sidebar">Tags</h5>
-  <div class="content-sidebar" *ngFor="let item of data">
-    <a class="btn btn-tag mr-10 mb-10" href="blog-3.html">{{item.nome}}</a>
+  <div class="content-sidebar" >
+    <a class="btn btn-tag mr-10 mb-10" *ngFor="let item of data" href="blog-3.html">{{item.nome}}</a>
 
   </div>

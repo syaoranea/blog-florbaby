@@ -3,7 +3,7 @@
     <h5 class="font-3xl-bold head-sidebar">Categories</h5>
     <div class="content-sidebar">
       <ul class="list-filter-checkbox" *ngFor="let item of data">
-        <li><a class="font-xl"  href="#">{{item.nome}}</a><span class="number-item">12</span></li>
+        <li><a class="font-xl"  (click)="goToCategoria(item.nome)">{{item.nome}}</a><span class="number-item">12</span></li>
       </ul>
     </div>
   </div>

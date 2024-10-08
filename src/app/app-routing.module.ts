@@ -6,11 +6,13 @@ import { AuthGuard } from './core/guards/auth.guard';
 import { LayoutComponent } from './layouts/layout.component';
 import { BlogComponent } from './modules/blog/view/blog.component';
 import { SingleComponent } from './modules/blog/page/single/single.component';
+import { CategoriaComponent } from './modules/blog/page/categoria/categoria.component';
 
 const routes: Routes = [
   { path: 'blog', component: BlogComponent,
   },
   { path: 'postagem/:id', component: SingleComponent },
+  { path: 'categoria/:id', component: CategoriaComponent },
   { path: '', component: LayoutComponent,
     loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
     canActivate: [AuthGuard]

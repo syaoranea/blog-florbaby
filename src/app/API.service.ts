@@ -1214,6 +1214,54 @@ export class APIService {
     )) as any;
     return <ListPostagemsQuery>response.data.listPostagems;
   }
+
+  async ListPostagemsCategoria(
+    categoria: string,  // Adicionando parâmetro de categoria
+    filter?: ModelPostagemFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListPostagemsQuery> {
+    // Construindo o filtro de categoria com base no parâmetro recebido
+    const categoryFilter = { categoria: { eq: categoria } };
+
+    // Combinando filtros adicionais se fornecidos
+    const combinedFilter = filter ? { and: [categoryFilter, filter] } : categoryFilter;
+
+    const statement = `query ListPostagems($filter: ModelPostagemFilterInput, $limit: Int, $nextToken: String) {
+      listPostagems(filter: $filter, limit: $limit, nextToken: $nextToken) {
+        __typename
+        items {
+          __typename
+          id
+          title
+          categoria
+          descricao
+          imagem
+          autor
+          tag
+          subtitulo
+          views
+          tempodeleitura
+          blog
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }`;
+
+    const gqlAPIServiceArguments: any = {
+      filter: combinedFilter,
+      limit,
+      nextToken
+    };
+
+    const response = (await this.client.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+
+    return <ListPostagemsQuery>response.data.listPostagems;
+  }
   async GetBlog(id: string): Promise<GetBlogQuery> {
     const statement = `query GetBlog($id: ID!) {
         getBlog(id: $id) {

@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { APIService } from '../../../../API.service';
 import { LoadingService } from '../../../../shared/services/loading.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { BlogService } from '../../service/blog.service';
 
 @Component({
   selector: 'app-categorias',
@@ -11,19 +13,18 @@ import { CommonModule } from '@angular/common';
   styleUrl: './categorias.component.css'
 })
 export class CategoriasComponent {
-  data: any[] = [];
+  @Input() data: any[] = [];
   loading = true;
 
   constructor(
     private api: APIService,
-    private loadingService: LoadingService
+    private loadingService: LoadingService,
+    private router: Router,
+    private service: BlogService
   ) {  }
 
   ngOnInit(): void {
-
-
     this.golist();
-
   }
 
   golist(){
@@ -42,5 +43,10 @@ export class CategoriasComponent {
     })
   }
 
+  goToCategoria(value: string){
+    this.service.setCategoria(value);
+    const categoria = value.replace(/\s+/g, '-');
+    this.router.navigate(['/categoria', categoria])
+  }
 
 }

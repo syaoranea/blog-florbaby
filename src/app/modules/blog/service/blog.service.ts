@@ -5,7 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class BlogService {
   id: string = '';
-  dataPostagem: any[] = []
+  dataPostagem: any[] = [];
+  dataPost: any = {};
+  categoria: string = '';
   constructor() { }
 
   getId(){
@@ -23,5 +25,15 @@ export class BlogService {
   setPostagem(value: any[]){
     this.dataPostagem = value;
   }
+
+  getCategoria(){
+    return this.categoria;
+  }
+
+  setCategoria(value: string){
+    this.categoria = value;
+  }
+
+
 
 }

@@ -1,5 +1,5 @@
 import { BlogService } from './../service/blog.service';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CategoriasComponent } from '../components/categorias/categorias.component';
 import { MaisVistosPostsComponent } from '../components/mais-vistos-posts/mais-vistos-posts.component';
 import { TagsComponent } from '../components/tags/tags.component';
@@ -34,7 +34,7 @@ import { BlogRoutingModule } from '../blog-routing.module';
 })
 export class BlogComponent {
   dataList: any[] = [];
-
+  destaque: any[] = []
 
   constructor(
     private api: APIService,
@@ -48,10 +48,15 @@ export class BlogComponent {
 
   golist(){
     this.api.ListPostagems().then((res: ListPostagemsQuery)=> {
-      if (res) {
+      if (res && res.items) {
         console.log(res.items , 1);
         this.dataList = res.items;
         console.log(this.dataList);
+        this.destaque = this.dataList.map(item => ({
+          ...item,
+          views: parseInt(item.views)
+        })).sort((a, b) => b.views - a.views).slice(0, 5);
+
       }
     }).catch((error)=>{
       console.log(error);

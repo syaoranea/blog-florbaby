@@ -14,7 +14,7 @@ import { ListJs, paginationlist, dataattribute, existingList, FuzzyList } from '
 import { ListService } from '../../tables/listjs/listjs.service';
 import { ListJsModel } from '../../tables/listjs/listjs.model';
 import { listSortEvent , NgbdListSortableHeader} from '../../tables/listjs/listjs-sortable.directive';
-import { APIService, CreatePostagemInput, DeletePostagemInput, UpdatePostagemInput } from 'src/app/API.service';
+import { APIService, CreatePostagemInput, CreateTagsInput, DeletePostagemInput, UpdatePostagemInput } from 'src/app/API.service';
 import { sub } from 'date-fns';
 
 
@@ -204,11 +204,24 @@ export class PostagensComponent {
     this.ListJsDatas.push({id: 1, ...postDetails});
     this.api.CreatePostagem(postDetails as CreatePostagemInput).then(res=>{
       console.log(res)
+      this.createTag()
     }).catch(error=>{
       console.log(error)
     });
   }
 
+  async createTag() {
+    const tagsDetails =  this.listJsForm.get('tag')?.value.split(',');
+    tagsDetails.array.forEach((element: string) => {
+      let detail = { nome: element};
+      this.api.CreateTags(detail as unknown as CreateTagsInput).then((res)=>{
+            console.log(res.id)
+          }).catch((error)=>{
+            console.log( error);
+          });
+    });
+
+  }
   async creatBlog() {
     const blogDetails = {
       descricao: this.listJsForm.get('description')?.value

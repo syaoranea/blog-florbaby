@@ -10,8 +10,9 @@ import { FooterComponent } from "../../../shared/components/footer/footer.compon
 import { CommonModule } from '@angular/common';
 import { APIService, ListPostagemsQuery } from 'src/app/API.service';
 import { DatacustomPipe } from '../components/datacustom.pipe';
-import { Router, RouterModule } from '@angular/router';
+import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { BlogRoutingModule } from '../blog-routing.module';
+import { GoogleTagManagerService } from 'angular-google-tag-manager';
 
 @Component({
   selector: 'app-blog',
@@ -39,11 +40,22 @@ export class BlogComponent {
   constructor(
     private api: APIService,
     private route: Router,
-    private service: BlogService
+    private service: BlogService,
+    private gtmService: GoogleTagManagerService,
   ) {  }
 
   ngOnInit(): void {
     this.golist();
+    this.route.events.forEach(item => {
+      if (item instanceof NavigationEnd) {
+          const gtmTag = {
+              event: 'page',
+              pageName: item.url
+          };
+
+          this.gtmService.pushTag(gtmTag);
+      }
+  });
   }
 
   golist(){

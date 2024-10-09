@@ -32,6 +32,7 @@ import { AuthenticationEffects } from './store/effects/authentication.effects';
 
 // Component
 import { AppComponent } from './app.component';
+import { GoogleTagManagerModule } from 'angular-google-tag-manager';
 
 // Store Effect
 import { InvoiceEffects } from './store/effects/invoce.effects';
@@ -69,6 +70,9 @@ if (environment.defaultauth === 'amplify') {
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
+    GoogleTagManagerModule.forRoot({
+      id: 'G-L1ZSFXCXXN',
+    }),
     LayoutsModule,
     ToastrModule.forRoot(),
     StoreModule.forRoot(rootReducer),

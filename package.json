@@ -47,6 +47,7 @@
     "@tinymce/tinymce-angular": "^8.0.1",
     "@types/leaflet-routing-machine": "^3.2.5",
     "@types/prismjs": "^1.26.3",
+    "angular-google-tag-manager": "^1.10.0",
     "angular-ng-autocomplete": "^2.0.12",
     "angular-ng-stepper": "^2.0.0",
     "angularx-flatpickr": "^7.3.0",

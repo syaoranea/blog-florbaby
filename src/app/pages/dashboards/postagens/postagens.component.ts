@@ -66,17 +66,12 @@ export class PostagensComponent {
   }
 
   ngOnInit(): void {
-    /**
-    * BreadCrumb
-    */
+
     this.breadCrumbItems = [
       { label: 'Admin' },
       { label: 'Postagens', active: true }
     ];
 
-    /**
-   * Form Validation
-   */
     this.listJsForm = new FormGroup({
       ids: new FormControl(''),
       title: new FormControl('', [Validators.required]),
@@ -89,7 +84,6 @@ export class PostagensComponent {
       views: new FormControl('', [Validators.required]),
       tempodeleitura: new FormControl('', [Validators.required, Validators.maxLength(100)]),
       minidescription: new FormControl('', [Validators.required]),
-
     });
 
     this.api.ListPostagems().then((res)=> {
@@ -167,8 +161,6 @@ export class PostagensComponent {
 
       const blog = this.creatBlog();
 
-
-
     }
     this.showModal?.hide()
     setTimeout(() => {
@@ -215,13 +207,16 @@ export class PostagensComponent {
     tagsDetails.array.forEach((element: string) => {
       let detail = { nome: element};
       this.api.CreateTags(detail as unknown as CreateTagsInput).then((res)=>{
-            console.log(res.id)
-          }).catch((error)=>{
-            console.log( error);
-          });
+        const detail = {
+          imagem: this.listJsForm.get('imagem')?.value
+        }
+        this.api.CreateGaleria(detail);
+      }).catch((error)=>{
+        console.log( error);
+      });
     });
-
   }
+
   async creatBlog() {
     const blogDetails = {
       descricao: this.listJsForm.get('description')?.value
@@ -233,6 +228,7 @@ export class PostagensComponent {
       console.log( error);
     });
   }
+
   // The master checkbox will check/ uncheck all items
   checkUncheckAll(ev: any) {
     this.ListJsDatas.forEach((x: { state: any; }) => x.state = ev.target.checked)
@@ -246,25 +242,18 @@ export class PostagensComponent {
     }
     this.checkedValGet = checkedVal
     checkedVal.length > 0 ? (document.getElementById("remove-actions") as HTMLElement).style.display = "block" : (document.getElementById("remove-actions") as HTMLElement).style.display = "none";
-
   }
+
   isAllChecked() {
     return this.ListJsDatas.every((_: { state: any; }) => _.state);
   }
 
-  /**
-  * Confirmation mail model
-  */
   deleteId: any;
   confirm(id: any) {
     this.deleteId = id;
     this.deleteModal?.show();
   }
 
-
-  /**
-  * Multiple Delete
-  */
   checkedValGet: any[] = [];
 
   // Delete Data

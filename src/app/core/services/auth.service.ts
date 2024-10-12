@@ -36,6 +36,7 @@ export class AuthenticationService {
 
     async getCurrentUser(): Promise<AuthUser> {
       this.currentUserValue = await getCurrentUser();
+      console.log(this.currentUserValue)
       return this.currentUserValue;
     }
 

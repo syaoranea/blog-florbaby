@@ -5,6 +5,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Store, select } from '@ngrx/store';
 import { login, signInWithGoogle } from 'src/app/store/actions/authentication.actions';
 import { AuthenticationService } from 'src/app/core/services/auth.service';
+import { AuthServiceCog } from '../auth/services/auth.service';
+import { SignInInput } from 'aws-amplify/auth';
 
 @Component({
   selector: 'app-login',
@@ -24,7 +26,12 @@ export class LoginComponent {
   // set the current year
   year: number = new Date().getFullYear();
 
-  constructor(private formBuilder: UntypedFormBuilder, private store: Store, private router: Router, private route: ActivatedRoute, private AuthenticationService: AuthenticationService) {
+  constructor(private formBuilder: UntypedFormBuilder,
+    private store: Store,
+    private router: Router,
+    private route: ActivatedRoute,
+    private AuthenticationService: AuthenticationService,
+  private auth: AuthServiceCog) {
     // redirect to home if already logged in
     // this.store.select(state => state.Authentication).subscribe(authState => {
     //   this.isLoggedIn = !!authState.user;
@@ -44,7 +51,7 @@ export class LoginComponent {
      * Form Validatyion
      */
     this.loginForm = this.formBuilder.group({
-      email: ['admin@themesbrand.com', [Validators.required, Validators.email]],
+      email: ['admin@themesbrand.com', [Validators.required]],
       password: ['123456', [Validators.required]],
     });
   }
@@ -70,11 +77,14 @@ export class LoginComponent {
   onSubmit() {
     this.submitted = true;
 
-    const email = this.f['email'].value; // Get the username from the form
-    const password = this.f['password'].value; // Get the password from the form
+    const login: SignInInput = {
+      username: this.loginForm.get('email')?.value,
+      password: this.loginForm.get('password')?.value
+    }
 
     // Login Api
-    this.store.dispatch(login({ email: email, password: password }));
+    this.auth.signIn(login);
+    this.router.navigate([''])
   }
 
   /**

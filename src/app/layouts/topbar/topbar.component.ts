@@ -1,3 +1,4 @@
+
 import { DOCUMENT } from '@angular/common';
 import { Component, EventEmitter, Inject, Output, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
@@ -11,7 +12,7 @@ import { ModalDirective } from 'ngx-bootstrap/modal';
 import { RootReducerState, getLayoutMode } from 'src/app/store/reducers';
 import { Store } from '@ngrx/store';
 import { changeMode } from 'src/app/store/actions/layout-action';
-import { logout } from 'src/app/store/actions/authentication.actions';
+import { AuthServiceCog } from 'src/app/account/auth/services/auth.service';
 
 @Component({
   selector: 'app-topbar',
@@ -64,6 +65,7 @@ export class TopbarComponent {
     private store: Store<RootReducerState>,
     public _cookiesService: CookieService,
     private auth: AuthenticationService,
+    private au: AuthServiceCog
   ) { }
 
   async ngOnInit(): Promise<void> {
@@ -339,6 +341,10 @@ export class TopbarComponent {
       document.querySelector('.empty-notification-elem')?.classList.remove('d-none')
     }
   }
+
+  logout(){
+    this.au.signOut()
+   }
 
 
 }

@@ -24,13 +24,13 @@ export class AuthGuard  {
             return true;
           } else {
             // Redireciona para a página de login se não estiver autenticado
-            this.router.navigate(['/login']);
+            this.router.navigate(['/auth/login']);
             return false;
           }
         }
       } catch (error) {
         console.error("Erro ao verificar autenticação:", error);
-        this.router.navigate(['/login']);
+        this.router.navigate(['/auth/login']);
         return false;
       }
       return true

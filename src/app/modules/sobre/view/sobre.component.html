@@ -1,0 +1,151 @@
+<app-header></app-header>
+
+<main class="main">
+  <section class="section block-blog-single">
+    <div class="container">
+      <div class="top-head-blog">
+        <div class="text-center">
+          <h2 class="font-4xl-bold">Quem somos</h2>
+          <div class="breadcrumbs d-inline-block">
+            <ul>
+              <li><a routerLink="">Home</a></li>
+              <li><a routerLink="/contato">Quem somos</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="feature-image">
+        <img src="assets/imgs/page/home/roupa-de-bebe-de-boa-qualidade-em-Moema-29082022.jpg" alt="kidify">
+      </div>
+      <div class="content-detail">
+        <h2>Nossa história
+        </h2>
+        <p>Em um pequeno e acolhedor bairro da zona leste de São Paulo, nasceu a Flor Baby, uma empresa com um propósito singular:
+          oferecer uma alternativa sustentável e prática para pais que desejam o melhor para seus bebês e para o planeta.
+          A empresa surgiu da necessidade de uma solução ecológica e econômica para a maternidade.
+        </p>
+        <p><strong>Nossa historia começa com uma ideia simples, mas poderosa: criar fraldas reutilizáveis que não apenas protejam e confortem os bebês,
+          mas também reduzam significativamente o desperdício de recursos naturais e a produção de resíduos.</strong>
+        <p>À medida que a Flor Baby cresce, seu impacto positivo no meio ambiente também se torna mais evidente. A empresa continua a expandir
+          sua linha de produtos, oferecendo não apenas fraldas, mas também acessórios e soluções que seguem os mesmos princípios de sustentabilidade.
+          A Fraldas de Pano é mais do que uma marca; é um movimento em direção a um futuro mais verde e consciente.
+        </p>
+        <!-- <ul class="list-ticks">
+          <li><img src="assets/imgs/page/about/tick.png" alt="kidify">We provide qualified & expert</li>
+          <li><img src="assets/imgs/page/about/tick.png" alt="kidify">Modern tools & technology use</li>
+          <li><img src="assets/imgs/page/about/tick.png" alt="kidify">Neat & cleaning top Services</li>
+          <li><img src="assets/imgs/page/about/tick.png" alt="kidify">We Develop Digital Future</li>
+        </ul> -->
+        <div class="box-experiences">
+          <div class="row">
+            <div class="col-lg-4"><strong class="font-xl-bold">10 Anos</strong>
+              <p class="font-md neutral-500">Temos mais de 10 anos no mercado.</p>
+            </div>
+            <div class="col-lg-4"><strong class="font-xl-bold">50.000+ fraldas</strong>
+              <p class="font-md neutral-500">Temos mais de 50.000 fraldas vendidas</p>
+            </div>
+            <div class="col-lg-4"><strong class="font-xl-bold">1.500+ Clientes</strong>
+              <p class="font-md neutral-500">Temos mais de 1.500 clientes satisfeitos</p>
+            </div>
+          </div>
+        </div>
+        <h2>Nossa Missão</h2>
+        <p>
+          Hoje, a missão da Flor Baby é clara: proporcionar produtos que ajudam os pais a cuidar de seus bebês de forma mais responsável e sustentável.
+          Com um compromisso contínuo com a qualidade, a inovação e a responsabilidade ambiental, a empresa se dedica a fazer uma diferença real,
+          uma fralda de pano de cada vez..
+        </p>
+      </div>
+    </div>
+    <!-- <div class="box-gallery-about">
+      <div class="container-1190">
+        <h2 class="font-3xl-bold mb-55">Nossa Galeria</h2>
+        <div class="box-gallery-list">
+          <div class="gallery-main"><a class="glightbox" href="assets/imgs/page/about/gallery.png"><img src="assets/imgs/page/about/gallery.png" alt="kidify"></a></div>
+          <div class="gallery-sub"><a class="glightbox" href="assets/imgs/page/about/gallery2.png"><img src="assets/imgs/page/about/gallery2.png" alt="kidify"></a><a class="glightbox" href="assets/imgs/page/about/gallery3.png"><img src="assets/imgs/page/about/gallery3.png" alt="kidify"></a><a class="glightbox" href="assets/imgs/page/about/gallery4.png"><img src="assets/imgs/page/about/gallery4.png" alt="kidify"></a><a class="glightbox" href="assets/imgs/page/about/gallery5.png"><img src="assets/imgs/page/about/gallery5.png" alt="kidify"></a></div>
+        </div>
+      </div>
+    </div> -->
+    <div class="box-reviews-about">
+      <div class="content-detail mb-20">
+        <h2 class="font-3xl-bold">Nossos Papais e Mamãe Felizes
+        </h2>
+      </div>
+      <div class="feature-image mb-0"><span class="title-left"></span></div>
+      <div class="box-slider-about box-slide-padding-left">
+
+
+
+        <div class="box-swiper">
+          <swiper-container [config]="config"  effect="cards" autoplay="true" speed="1000" loop="true" flipEffect="true">
+            <swiper-slide *ngFor="let slide of slides" >
+            <div class="slide">
+              <div class="cardReview">
+                <div class="cardRating">
+                  <img src="assets/imgs/template/icons/star.svg" width="20" height="20" alt="kidify">
+                  <img src="assets/imgs/template/icons/star.svg" width="20" height="20"  alt="kidify">
+                  <img src="assets/imgs/template/icons/star.svg" width="20" height="20"  alt="kidify">
+                  <img src="assets/imgs/template/icons/star.svg" width="20" height="20"  alt="kidify">
+                  <img src="assets/imgs/template/icons/star.svg" width="20" height="20"  alt="kidify">
+                </div>
+                <div class="cardReviewText">
+                  <p class="font-sm neutral-900">{{slide.coment}}</p>
+                </div>
+                <div class="cardAuthor">
+                  <span class="font-lg-bold brand-1">
+                    <img [src]="slide.imageSrc" [alt]="slide.caption">
+                    {{slide.cliente}}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="content-detail">
+        <h2>Nossos Valores</h2>
+        <p><b>Sustentabilidade</b>
+          Compromisso com o Meio Ambiente: Nós acreditamos na proteção do nosso planeta para as futuras gerações. Trabalhamos incessantemente para minimizar nosso impacto ambiental,
+          utilizando materiais recicláveis e processos de produção ecológicos.
+        </p>
+        <p><b>Qualidade</b>
+          Excelência em Produtos: Nossa prioridade é oferecer fraldas que garantam conforto e segurança para os bebês e praticidade para os pais. Investimos em tecnologia e
+          pesquisa para assegurar que nossos produtos atendam aos mais altos padrões de qualidade.
+        </p>
+        <p><b>Educação</b>
+          Empoderamento e Conhecimento: Acreditamos que a educação é fundamental para promover práticas sustentáveis. Oferecemos recursos e suporte para educar os pais sobre
+          o uso de fraldas de pano e a importância da sustentabilidade.
+        </p>
+        <p>
+          <b>Responsabilidade Social</b>
+        Impacto Positivo: Buscamos contribuir positivamente para a sociedade e o meio ambiente. Estamos envolvidos em iniciativas sociais e ambientais que ajudam a
+          promover um futuro mais justo e sustentável para todos.
+        </p>
+      </div>
+    </div>
+  </section>
+  <div class="section block-section block-section-gallery block-section-instagram-5">
+    <div class="container">
+      <div class="top-head top-head-abs justify-content-center">
+        <p class="font-md-bold text-uppercase brand-1 wow fadeInDown">FOLLOW US ON INSTAGRAM</p><a class="florbaby-icon" href="https://www.instagram.com/lojaflorbaby/">florbaby.com.br</a>
+      </div>
+    </div>
+    <div class="box-gallery-instagram">
+      <div class="box-gallery-instagram-inner">
+        <div class="gallery-item wow fadeInLeft"><img src="assets/imgs/page/homepage4/insta.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta2.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta3.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta4.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight"><img src="assets/imgs/page/homepage4/insta5.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight"><img src="assets/imgs/page/homepage4/insta6.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight d-md-block d-none"><img src="assets/imgs/page/homepage4/insta7.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight d-md-block d-none"><img src="assets/imgs/page/homepage4/insta8.png" alt="florbaby"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

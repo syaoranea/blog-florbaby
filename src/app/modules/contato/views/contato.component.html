@@ -1,0 +1,125 @@
+<app-header></app-header>
+
+<main class="main">
+  <section class="section block-blog-single block-contact">
+    <div class="container">
+      <div class="top-head-blog">
+        <div class="text-center">
+          <h2 class="font-4xl-bold">
+            Contate-nos
+          </h2>
+          <div class="breadcrumbs d-inline-block">
+            <ul>
+              <li><a routerLink="">Home</a></li>
+              <li><a routerLink="/blog" routerLinkActive="router-link-active" >Blog</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-1190">
+      <div class="box-map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.355326252609!2d-46.4550562!3d-23.555678599999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce668c46ffa5a9%3A0x3b1c0461d9768771!2sR.%20Serra%20de%20Santa%20Marta%2C%20256%20-%20Vila%20Carmosina%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2008290-420!5e0!3m2!1spt-BR!2sbr!4v1725238340070!5m2!1spt-BR!2sbr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- section informação de contato -->
+
+      <div class="box-info-contact">
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-15">
+            <div class="cardContact cardChat">
+              <div class="cardInfo"><strong class="d-block mb-5 font-xl-bold">Chat com vendas</strong>
+                <p class="font-md">Fale com nossa equipe</p><a class="font-md" href="#">vendas florbaby.com.br</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-15">
+            <div class="cardContact cardChat">
+              <div class="cardInfo"><strong class="d-block mb-5 font-xl-bold">Ligue para nós</strong><a class="font-md" href="#">(11) 3294-4887</a></div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-15">
+            <div class="cardContact cardChat">
+              <div class="cardInfo"><strong class="d-block mb-5 font-xl-bold">Endereço</strong>
+                <p class="font-md">R. Serra de Santa Marta, 256 - Vila Carmosina, São Paulo - SP</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-15">
+            <div class="cardContact cardChat">
+              <div class="cardInfo"><strong class="d-block mb-5 font-xl-bold">Rede social</strong>
+                <p class="font-md">R. Serra de Santa Marta, 256 - Vila Carmosina, São Paulo - SP</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- section informação de contato -->
+      <div class="box-form-contact">
+        <h3 class="font-4xl-bold mb-40">Entre em contato
+        </h3>
+        <div id="thank-you-message">Obrigado! Seu e-mail foi enviado.</div>
+        <div class="row">
+          <div class="col-lg-12">
+            <form onsubmit="submitApi(event)">
+              <div class="row">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input class="form-control" id="nome-input" type="text" placeholder="Seu nome *" required title="Informe seu nome.">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <input class="form-control" id="email-input" type="text" placeholder="Seu email *" required title="Por favor, insira um endereço de e-mail válido.">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input class="form-control" id="telefone-input" type="text" placeholder="Seu telefone" required pattern="\d{10,11}" title="O telefone deve ter 10 ou 11 dígitos." >
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="form-group">
+                    <input class="form-control" id="assunto-input" type="text" placeholder="Assunto">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <textarea class="form-control" id="mensagem-input" rows="6" placeholder="Mensagem / Nota" required title="Por favor, insira sua mensagem."></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <button type="submit" class="btn btn-brand-1-medium">Enviar agora</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="section block-section block-section-gallery block-section-instagram-5">
+    <div class="container">
+      <div class="top-head top-head-abs justify-content-center">
+        <p class="font-md-bold text-uppercase brand-1 wow fadeInDown">FOLLOW US ON INSTAGRAM</p><a class="florbaby-icon" href="https://www.instagram.com/lojaflorbaby/">florbaby.com.br</a>
+      </div>
+    </div>
+    <div class="box-gallery-instagram">
+      <div class="box-gallery-instagram-inner">
+        <div class="gallery-item wow fadeInLeft"><img src="assets/imgs/page/homepage4/insta.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta2.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta3.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInUp"><img src="assets/imgs/page/homepage4/insta4.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight"><img src="assets/imgs/page/homepage4/insta5.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight"><img src="assets/imgs/page/homepage4/insta6.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight d-md-block d-none"><img src="assets/imgs/page/homepage4/insta7.png" alt="florbaby"></div>
+        <div class="gallery-item wow fadeInRight d-md-block d-none"><img src="assets/imgs/page/homepage4/insta8.png" alt="florbaby"></div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<app-footer></app-footer>

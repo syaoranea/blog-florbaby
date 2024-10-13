@@ -1,3 +1,4 @@
+<app-loading></app-loading>
 <app-header></app-header>
 
 <section class="section block-section-8">
@@ -14,8 +15,8 @@
           <div class="cardImage">
             <div class="box-date-info">
               <div class="box-inner-date">
-                <div class="heading-6">21</div>
-                <p class="font-md neutral-900">Jun</p>
+                <div class="heading-6">{{formatData('dia', item.createdAt)}}</div>
+                <p class="font-md neutral-900">{{formatData('mes', item.createdAt)}}</p>
               </div>
             </div>
             <a href="blog-single.html">

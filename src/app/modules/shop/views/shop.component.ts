@@ -8,12 +8,13 @@ import { BlogService } from '../../blog/service/blog.service';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
 import { LoadingService } from 'src/app/shared/services/loading.service';
 import { CommonModule } from '@angular/common';
+import { LoadingComponent } from "../../../shared/components/loading/loading.component";
 
 
 @Component({
   selector: 'app-shop',
   standalone: true,
-  imports: [HeaderComponent, FooterComponent, InstagramFeedComponent, CommonModule],
+  imports: [HeaderComponent, FooterComponent, InstagramFeedComponent, CommonModule, LoadingComponent],
   templateUrl: './shop.component.html',
   styleUrl: './shop.component.scss'
 })
@@ -59,5 +60,15 @@ export class ShopComponent implements OnInit{
     }).finally(()=>{
       this.loadingService.hide();
     })
+  }
+
+  formatData(dat: string, data: any){
+    const date = new Date(data);
+    if (dat === 'dia'){
+      const day = date.getDate();
+      return day;
+    }
+    const month = date.toLocaleString('pt-br', { month: 'short' });
+    return month;
   }
 }

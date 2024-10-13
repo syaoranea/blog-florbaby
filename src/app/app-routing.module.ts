@@ -9,15 +9,16 @@ import { BlogComponent } from './modules/blog/view/blog.component';
 import { SingleComponent } from './modules/blog/page/single/single.component';
 import { CategoriaComponent } from './modules/blog/page/categoria/categoria.component';
 import { SobreComponent } from './modules/sobre/view/sobre.component';
+import { ShopComponent } from './modules/shop/views/shop.component';
 
 const routes: Routes = [
+  { path: '', component: ShopComponent,},
   { path: 'blog', component: BlogComponent,},
   { path: 'contato', component: ContatoComponent},
   { path: 'sobre', component: SobreComponent},
   { path: 'postagem/:id', component: SingleComponent },
   { path: 'categoria/:id', component: CategoriaComponent },
-  { path: '', component: LayoutComponent,
-    loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
+  { path: 'admin', component: LayoutComponent, loadChildren: () => import('./pages/pages.module').then(m => m.PagesModule),
     canActivate: [AuthGuard]
   },
   { path: 'auth', loadChildren: () => import('./account/account.module').then(m => m.AccountModule) },

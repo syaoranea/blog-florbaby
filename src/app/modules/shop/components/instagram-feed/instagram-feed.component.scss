@@ -1,0 +1,72 @@
+@import url(../../../../shared/utils/utils.css);
+@import url(../../../../shared/utils/responsivo.css);
+/*import vendors*/
+@import url(../../../../../assets/css/vendors/normalize.css);
+@import url(../../../../../assets/css/vendors/bootstrap.min.css);
+@import url(../../../../../assets/css/vendors/uicons-regular-rounded.css);
+@import url(../../../../../assets/css/plugins/swiper-bundle.min.css);
+@import url(../../../../../assets/css/plugins/magnific-popup.css);
+@import url(../../../../../assets/css/plugins/select2.min.css);
+@import url(../../../../../assets/css/plugins/slick.css);
+/* @import url(../../../../../../../assets/css/plugins/jquery-ui.css); */
+@import url(../../../../../assets/css/plugins/perfect-scrollbar.css);
+@import url(../../../../../assets/css/plugins/animate.css);
+@import url(../../../../../assets/css/plugins/jquery.timepicker.min.css);
+@import url(../../../../../assets/css/plugins/glightbox.min.css);
+@import url(../../views/shop.component.scss);
+
+.block-section-10 {
+  padding: 80px 0px 0px 0px;
+}
+
+.brand-1 {
+  color: #9F86D9;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  color: #1C1D1D;
+}
+
+h4 {
+  font-size: 32px;
+  line-height: 40px;
+}h4 {
+  transition: all 0.3s ease 0s;
+}
+.instagram-title {
+  display: inline-block;
+  padding: 0px 0px 0px 30px;
+}
+.text-center {
+  text-align: center !important;
+}
+.box-gallery-instagram {
+  display: flex;
+  align-items: center;
+  margin: 40px 0px 40px 0px;
+  overflow: hidden;
+  width: 100%;
+}
+.box-gallery-instagram .box-gallery-instagram-inner {
+  margin-left: -100px;
+  margin-right: -100px;
+  display: flex;
+  align-items: center;
+}
+.box-gallery-instagram .box-gallery-instagram-inner .gallery-item {
+  padding-right: 0px;
+}
+.box-gallery-instagram .box-gallery-instagram-inner .gallery-item img {
+  display: block;
+  max-width: 100%;
+}
+.box-gallery-instagram .box-gallery-instagram-inner .gallery-item:last-child {
+  margin-left: 0px;
+}
+.block-section-gallery .box-gallery-instagram .box-gallery-instagram-inner .gallery-item {
+  padding-left: 5px;
+  padding-right: 5px;
+}

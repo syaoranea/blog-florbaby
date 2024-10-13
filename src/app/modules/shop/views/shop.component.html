@@ -1,0 +1,36 @@
+<app-header></app-header>
+
+<section class="section block-section-8">
+  <div class="container">
+    <div class="text-center">
+      <h4 class="text-uppercase brand-1 mb-15 brush-bg wow animate__fadeIn animated">Últimas Notícias e Eventos</h4>
+      <p class="font-lg neutral-500 mb-30 wow animate__animated animate__fadeIn">
+        Não perca ótimas notícias promocionais ou eventos futuros
+        <br class="d-none d-lg-block">em nosso sistema de lojas</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 wow animate__animated animate__fadeIn" *ngFor="let item of dataBlog; let i = index" data-wow-delay="0s">
+        <div class="cardBlog wow fadeInUp">
+          <div class="cardImage">
+            <div class="box-date-info">
+              <div class="box-inner-date">
+                <div class="heading-6">21</div>
+                <p class="font-md neutral-900">Jun</p>
+              </div>
+            </div>
+            <a href="blog-single.html">
+              <img src="{{item.imagem}}" alt="imagem instagram"></a>
+          </div>
+          <div class="cardInfo"><a class="cardTitle" href="blog-single.html">
+              <h5 class="font-xl-bold">{{item.title}}</h5></a>
+            <p class="cardDesc font-lg neutral-500">{{item.descricao}}</p><a class="btn btn-arrow-right" href="blog-single.html">Continue lendo<img src="assets/imgs/template/icons/arrow.svg" alt="Kidify"><img class="hover-icon" src="assets/imgs/template/icons/arrow-hover.svg" alt="Kidify"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-instagram-feed></app-instagram-feed>
+
+<app-footer></app-footer>

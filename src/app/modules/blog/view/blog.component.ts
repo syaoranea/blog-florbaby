@@ -13,6 +13,8 @@ import { DatacustomPipe } from '../components/datacustom.pipe';
 import { NavigationEnd, Router, RouterModule } from '@angular/router';
 import { BlogRoutingModule } from '../blog-routing.module';
 import { GoogleTagManagerService } from 'angular-google-tag-manager';
+import { LoadingComponent } from "../../../shared/components/loading/loading.component";
+import { LoadingService } from 'src/app/shared/services/loading.service';
 
 @Component({
   selector: 'app-blog',
@@ -27,9 +29,9 @@ import { GoogleTagManagerService } from 'angular-google-tag-manager';
     FooterComponent,
     CommonModule,
     DatacustomPipe,
-    RouterModule
-
-  ],
+    RouterModule,
+    LoadingComponent
+],
   templateUrl: './blog.component.html',
   styleUrl: './blog.component.scss'
 })
@@ -42,6 +44,7 @@ export class BlogComponent {
     private route: Router,
     private service: BlogService,
     private gtmService: GoogleTagManagerService,
+    private loadingService: LoadingService
   ) {  }
 
   ngOnInit(): void {
@@ -59,6 +62,7 @@ export class BlogComponent {
   }
 
   golist(){
+    this.loadingService.show();
     this.api.ListPostagems().then((res: ListPostagemsQuery)=> {
       if (res && res.items) {
         console.log(res.items , 1);
@@ -72,6 +76,8 @@ export class BlogComponent {
       }
     }).catch((error)=>{
       console.log(error);
+    }).finally(()=>{
+      this.loadingService.hide();
     })
   }
 

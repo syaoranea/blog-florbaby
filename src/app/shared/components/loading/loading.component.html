@@ -1,3 +1,18 @@
-<div *ngIf="isLoading | async" class="loading-overlay">
-  <div class="loading-spinner"></div>
+<div *ngIf="isLoading | async" >
+  <div id="preloader-active">
+    <div class="preloader d-flex align-items-center justify-content-center">
+      <div class="preloader-inner position-relative">
+        <div class="page-loading text-center"><img class="d-inline-block" src="../../../../assets/imgs/template/favicon.png" alt="florbaby">
+          <div class="page-loading-inner">
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+
+

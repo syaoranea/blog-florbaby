@@ -34,8 +34,8 @@ export class ShopComponent implements OnInit{
     this.route.events.forEach(item => {
       if (item instanceof NavigationEnd) {
           const gtmTag = {
-              event: 'page',
-              pageName: item.url
+              event: 'page_view',
+              pageName: '/home'
           };
 
           this.gtmService.pushTag(gtmTag);

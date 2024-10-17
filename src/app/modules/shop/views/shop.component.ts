@@ -30,17 +30,12 @@ export class ShopComponent implements OnInit{
   ) {  }
 
   ngOnInit(): void {
+    this.gtmService.pushTag({
+       event: 'page_view',
+        pageName: '/home'
+    });
     this.golist();
-    this.route.events.forEach(item => {
-      if (item instanceof NavigationEnd) {
-          const gtmTag = {
-              event: 'page_view',
-              pageName: '/home'
-          };
-
-          this.gtmService.pushTag(gtmTag);
-      }
-  });
+   
   }
 
   golist(){

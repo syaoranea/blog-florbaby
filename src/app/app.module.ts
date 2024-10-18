@@ -71,7 +71,7 @@ if (environment.defaultauth === 'amplify') {
     BrowserAnimationsModule,
     AppRoutingModule,
     GoogleTagManagerModule.forRoot({
-      id: 'G-L1ZSFXCXXN',
+      id: 'GTM-WZNJBVD9',
     }),
     LayoutsModule,
     ToastrModule.forRoot(),

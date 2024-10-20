@@ -35,7 +35,7 @@ export class ShopComponent implements OnInit{
         pageName: '/home'
     });
     this.golist();
-   
+
   }
 
   golist(){
@@ -65,5 +65,13 @@ export class ShopComponent implements OnInit{
     }
     const month = date.toLocaleString('pt-br', { month: 'short' });
     return month;
+  }
+
+  onGoToSingle(data: any) {
+    this.service.setId(data.blog);
+    this.service.setPostagem(data)
+    const titulo = data.title.replace(/\s+/g, '-');
+    console.log(titulo);
+    this.route.navigate(['/postagem', titulo]);
   }
 }

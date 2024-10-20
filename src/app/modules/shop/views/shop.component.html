@@ -19,12 +19,12 @@
                 <p class="font-md neutral-900">{{formatData('mes', item.createdAt)}}</p>
               </div>
             </div>
-            <a href="blog-single.html">
+            <a (click)="onGoToSingle(item)">
               <img src="{{item.imagem}}" alt="imagem instagram"></a>
           </div>
-          <div class="cardInfo"><a class="cardTitle" href="blog-single.html">
+          <div class="cardInfo"><a class="cardTitle" (click)="onGoToSingle(item)">
               <h5 class="font-xl-bold">{{item.title}}</h5></a>
-            <p class="cardDesc font-lg neutral-500">{{item.descricao}}</p><a class="btn btn-arrow-right" href="blog-single.html">Continue lendo<img src="assets/imgs/template/icons/arrow.svg" alt="Kidify"><img class="hover-icon" src="assets/imgs/template/icons/arrow-hover.svg" alt="Kidify"></a>
+            <p class="cardDesc font-lg neutral-500">{{item.descricao}}</p><a class="btn btn-arrow-right" (click)="onGoToSingle(item)">Continue lendo<img src="assets/imgs/template/icons/arrow.svg" alt="Kidify"><img class="hover-icon" src="assets/imgs/template/icons/arrow-hover.svg" alt="Kidify"></a>
           </div>
         </div>
       </div>
